@@ -3,6 +3,7 @@
     <section class="intro">
       <h1>get the latest news</h1>
     </section>
+    <button @click="getData">Getir</button>
     <section class="featured-posts">
       <PostPreview
         id="1"
@@ -16,11 +17,27 @@
 
 
 <script>
+import axios from "axios";
 import PostPreview from "@/components/Posts/PostPreview";
 
 export default {
   components: {
     PostPreview,
+  },
+  methods: {
+    getData() {
+      console.log("çalşt");
+      // axios
+      //   .put(
+      //     "https://firestore.googleapis.com/v1/projects/nuxt-admin-f7e4f/databases/(default)/documents/posts.json",
+      //     {
+      //       id: "2",
+      //       text: "alperen burada",
+      //     }
+      //   )
+      //   .then((result) => console.log(result))
+      //   .catch((e) => console.log(e));
+    },
   },
 };
 </script>
