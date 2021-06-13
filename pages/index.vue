@@ -5,6 +5,7 @@
     </section>
     <button @click="getData">Getir</button>
     <button @click="postData">Post</button>
+    <button @click="onLogout">logout</button>
     <section class="featured-posts">
       <PostPreview
         id="1"
@@ -70,6 +71,10 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    onLogout() {
+      this.$store.dispatch("logout");
+      this.$router.push("/admin/auth");
     },
   },
 };
