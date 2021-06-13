@@ -46,12 +46,28 @@ export default {
               text: doc.data().text,
             };
             this.gelenVeri.push(data);
-            console.log(this.gelenVeri);
           });
+          console.log(this.gelenVeri);
         });
     },
     postData() {
       console.log("çalşt");
+      // Add a new document with a generated id.
+      db.collection("posts")
+        .add({
+          id: "6",
+          text: "kurtlar sofrası",
+        })
+        .then(() => {
+          this.gelenVeri.push({
+            id: "6",
+            text: "kurtlar sofrası",
+          });
+        })
+        // .then(toastr.success("Masaj başarıyla eklendi.", "Başarılı!"))
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
