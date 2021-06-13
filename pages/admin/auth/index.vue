@@ -27,22 +27,15 @@ export default {
   },
   methods: {
     onSubmit() {
-      let authUrl =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBFGp0MSMWVYcxGP8bwR1qP5y0IZDLgjes";
-      if (!this.isLogin) {
-        authUrl =
-          "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBFGp0MSMWVYcxGP8bwR1qP5y0IZDLgjes";
-      }
-      axios
-        .post(authUrl, {
+      this.$store
+        .dispatch("authenticateUser", {
+          isLogin: this.isLogin,
           email: this.email,
           password: this.password,
-          returnSecureToken: true,
         })
-        .then((result) => {
-          console.log(result);
-        })
-        .catch((e) => console.log(e));
+        .then(() => {
+          this.$router.push("/");
+        });
     },
   },
 };
