@@ -4,6 +4,7 @@
       <h1>get the latest news</h1>
     </section>
     <button @click="getData">Getir</button>
+    <button @click="postData">Post</button>
     <section class="featured-posts">
       <PostPreview
         id="1"
@@ -17,6 +18,7 @@
 
 
 <script>
+import db from "@/plugins/firebaseInit";
 import axios from "axios";
 import PostPreview from "@/components/Posts/PostPreview";
 
@@ -24,19 +26,32 @@ export default {
   components: {
     PostPreview,
   },
+  data() {
+    return {
+      gelenVeri: [],
+      id: "",
+      text: "",
+    };
+  },
   methods: {
     getData() {
       console.log("çalşt");
-      // axios
-      //   .put(
-      //     "https://firestore.googleapis.com/v1/projects/nuxt-admin-f7e4f/databases/(default)/documents/posts.json",
-      //     {
-      //       id: "2",
-      //       text: "alperen burada",
-      //     }
-      //   )
-      //   .then((result) => console.log(result))
-      //   .catch((e) => console.log(e));
+      db.collection("posts")
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            const data = {
+              id: doc.id,
+              id: doc.data().id,
+              text: doc.data().text,
+            };
+            this.gelenVeri.push(data);
+            console.log(this.gelenVeri);
+          });
+        });
+    },
+    postData() {
+      console.log("çalşt");
     },
   },
 };
