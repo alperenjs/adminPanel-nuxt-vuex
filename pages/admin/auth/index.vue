@@ -17,7 +17,7 @@
 <script>
 import axios from "axios";
 export default {
-  layout: "admin",
+  layout: "default",
   data() {
     return {
       isLogin: true,

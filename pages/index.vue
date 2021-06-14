@@ -25,7 +25,6 @@ import PostPreview from "@/components/Posts/PostPreview";
 
 export default {
   layout: "admin",
-  middleware: ["check-auth", "auth"],
   components: {
     PostPreview,
   },
