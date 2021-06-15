@@ -12,7 +12,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"}
+      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"},
+      {rel:"stylesheet", href:"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"}
+    ],
+    script: [
+      { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js' }
     ]
   },
 
@@ -22,7 +26,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~plugins/runFirebase.js' //firebase i buradan başlatıyorum
+    '~plugins/runFirebase.js' //firebase i buradan başlatıyorum,
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
