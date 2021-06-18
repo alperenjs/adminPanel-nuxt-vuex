@@ -1,7 +1,7 @@
 <template>
-  <div class="row">
-    <h1>içerik</h1>
-  </div>
+<div>
+  içerk gelecek
+</div>
 </template>
 
 <script>
