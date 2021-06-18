@@ -42,7 +42,7 @@ export default {
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "css/style.bundle.css",
+          href: "css/style.bundle.min.css",
         },
         {
           rel: "stylesheet",
@@ -66,6 +66,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch("auth/logout");
+      this.$router.push("/admin/auth");
+    },
   },
 };
 </script>
@@ -307,6 +313,11 @@ export default {
                       </li>
                     </ul>
                   </div>
+                </li>
+                <li class="menu-item">
+                  <button class="btn btn-danger" @click="onLogout">
+                    Çıkış Yap
+                  </button>
                 </li>
               </ul>
               <!--end::Menu Nav-->
