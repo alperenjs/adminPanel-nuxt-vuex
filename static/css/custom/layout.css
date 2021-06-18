@@ -1,4 +1,7 @@
 .menu-link .pulse .pulse-ring {
-    left: -7px;
+    left: -11px;
     top: -7px;
+}
+.menu-link .svg-icon{
+    margin-left: -4px;
 }
