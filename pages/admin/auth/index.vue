@@ -28,14 +28,16 @@ export default {
   methods: {
     onSubmit() {
       this.$store
-        .dispatch("authenticateUser", {
+        .dispatch("auth/authenticateUser", {
           isLogin: this.isLogin,
           email: this.email,
           password: this.password,
         })
         .then(() => {
           this.$router.push("/");
-        });
+          console.log("başarılı");
+        })
+        .catch((err) => console.log(erry));
     },
   },
 };

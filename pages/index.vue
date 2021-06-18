@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="row">
     <h1>içerik</h1>
+    <button class="btn btn-danger" @click="onLogout">Çıkış Yap</button>
   </div>
 </template>
 
@@ -19,6 +20,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch("auth/logout");
+      this.$router.push("/admin/auth");
+    },
   },
 };
 </script>
