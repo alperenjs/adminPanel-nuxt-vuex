@@ -5,3 +5,6 @@
 .menu-link .svg-icon{
     margin-left: -4px;
 }
+.aside-menu .menu-nav>.menu-section .menu-text {
+    text-transform: unset;
+}
