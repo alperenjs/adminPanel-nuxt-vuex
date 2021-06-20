@@ -182,7 +182,7 @@ export default {
                   <h4 class="menu-text">Kontroller</h4>
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                  <li class="menu-item" aria-haspopup="true">
+                <li class="menu-item" aria-haspopup="true">
                   <a href="index.html" class="menu-link">
                     <i class="menu-icon flaticon-home"></i>
                     <span class="menu-text">Ana Sayfa</span>
@@ -244,6 +244,24 @@ export default {
                   <h4 class="menu-text">İçerik Yönetimi</h4>
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
+                <li class="menu-item" aria-haspopup="true">
+                 <nuxt-link to="/" class="menu-link">
+                    <i class="menu-icon flaticon-edit"></i>
+                    <span class="menu-text">CRUD</span>
+                 </nuxt-link>
+                </li>
+                <li class="menu-item" aria-haspopup="true">
+                 <nuxt-link to="/" class="menu-link">
+                    <i class="menu-icon flaticon-edit"></i>
+                    <span class="menu-text">CRUD tek satır</span>
+                 </nuxt-link>
+                </li>
+                <li class="menu-item" aria-haspopup="true">
+                 <nuxt-link to="/" class="menu-link">
+                    <i class="menu-icon flaticon-upload-1"></i>
+                    <span class="menu-text">Image Upload</span>
+                 </nuxt-link>
+                </li>
                 <li
                   class="menu-item menu-item-submenu"
                   aria-haspopup="true"
@@ -251,7 +269,7 @@ export default {
                 >
                   <a href="javascript:;" class="menu-link menu-toggle">
                     <i class="menu-icon flaticon-web"></i>
-                    <span class="menu-text">CRUD</span>
+                    <span class="menu-text">Çoklu Menü</span>
                     <i class="menu-arrow"></i>
                   </a>
                   <div class="menu-submenu">
