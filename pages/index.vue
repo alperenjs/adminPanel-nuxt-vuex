@@ -1,6 +1,7 @@
 <template>
 <div>
-  içerk gelecek
+
+
 </div>
 </template>
 
@@ -25,6 +26,9 @@ export default {
       this.$store.dispatch("auth/logout");
       this.$router.push("/admin/auth");
     },
+
   },
+  mounted(){
+  }
 };
 </script>

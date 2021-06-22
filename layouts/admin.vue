@@ -67,7 +67,7 @@ export default {
            {
           rel: "stylesheet",
           type: "text/css",
-          href: "css/custom/layout.css",
+          href: "css/custom/adminLayout.css",
         },
       ],
     };
