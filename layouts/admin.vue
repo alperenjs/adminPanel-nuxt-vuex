@@ -21,53 +21,43 @@ export default {
           " header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading",
         id: "kt_body",
       },
-      script: [
-        {
-          src: "plugins/global/plugins.bundle.js",
-        },
-        {
-          src: "js/scripts.bundle.min.js",
-        },
-        {
-          src: "js/settings.js",
-        },
-      ],
+  
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "plugins/global/plugins.bundle.css",
+          href: "/plugins/global/plugins.bundle.css",
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "css/style.bundle.min.css",
+          href: "/css/style.bundle.min.css",
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "css/themes/layout/header/base/dark.css",
+          href: "/css/themes/layout/header/base/dark.css",
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "css/themes/layout/header/menu/dark.css",
+          href: "/css/themes/layout/header/menu/dark.css",
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "css/themes/layout/brand/dark.css",
+          href: "/css/themes/layout/brand/dark.css",
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "css/themes/layout/aside/dark.css",
+          href: "/css/themes/layout/aside/dark.css",
         },
            {
           rel: "stylesheet",
           type: "text/css",
-          href: "css/custom/adminLayout.css",
+          href: "/css/custom/adminLayout.css",
         },
       ],
     };
@@ -183,10 +173,16 @@ export default {
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
-                  <a href="index.html" class="menu-link">
+                      <nuxt-link to="/admin" class="menu-link">
                     <i class="menu-icon flaticon-home"></i>
                     <span class="menu-text">Ana Sayfa</span>
-                  </a>
+                      </nuxt-link>
+                </li>
+                 <li class="menu-item" aria-haspopup="true">
+                      <nuxt-link to="/admin/blog" class="menu-link">
+                    <i class="menu-icon flaticon-home"></i>
+                    <span class="menu-text">Blog</span>
+                      </nuxt-link>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
                   <a href="/" class="menu-link">

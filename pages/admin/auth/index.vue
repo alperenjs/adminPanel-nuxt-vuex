@@ -34,8 +34,7 @@ export default {
           password: this.password,
         })
         .then(() => {
-          this.$router.push("/");
-          console.log("başarılı");
+          this.$router.push("/admin");
         })
         .catch((err) => console.log(erry));
     },

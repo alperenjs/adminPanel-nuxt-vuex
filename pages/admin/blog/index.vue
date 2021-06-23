@@ -1,16 +1,17 @@
 <template>
 <div>
 
-
+<h1>blog içeriği</h1>
 </div>
 </template>
+
 
 <script>
 export default {
   layout: "admin",
   head() {
     return {
-      title: "Admin ekranı component",
+      title: "Blog ekranı component",
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
