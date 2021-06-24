@@ -13,61 +13,61 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "My custom description",
-        },
+          content: "My custom description"
+        }
       ],
       bodyAttrs: {
         class:
           " header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading",
-        id: "kt_body",
+        id: "kt_body"
       },
-  
+
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "/plugins/global/plugins.bundle.css",
+          href: "/plugins/global/plugins.bundle.css"
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "/css/style.bundle.min.css",
+          href: "/css/style.bundle.min.css"
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "/css/themes/layout/header/base/dark.css",
+          href: "/css/themes/layout/header/base/dark.css"
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "/css/themes/layout/header/menu/dark.css",
+          href: "/css/themes/layout/header/menu/dark.css"
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "/css/themes/layout/brand/dark.css",
+          href: "/css/themes/layout/brand/dark.css"
         },
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "/css/themes/layout/aside/dark.css",
+          href: "/css/themes/layout/aside/dark.css"
         },
-           {
+        {
           rel: "stylesheet",
           type: "text/css",
-          href: "/css/custom/adminLayout.css",
-        },
-      ],
+          href: "/css/custom/adminLayout.css"
+        }
+      ]
     };
   },
   methods: {
     onLogout() {
       this.$store.dispatch("auth/logout");
       this.$router.push("/admin/auth");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -173,16 +173,10 @@ export default {
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
-                      <nuxt-link to="/admin" class="menu-link">
+                  <nuxt-link to="/admin" class="menu-link">
                     <i class="menu-icon flaticon-home"></i>
                     <span class="menu-text">Ana Sayfa</span>
-                      </nuxt-link>
-                </li>
-                 <li class="menu-item" aria-haspopup="true">
-                      <nuxt-link to="/admin/blog" class="menu-link">
-                    <i class="menu-icon flaticon-home"></i>
-                    <span class="menu-text">Blog</span>
-                      </nuxt-link>
+                  </nuxt-link>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
                   <a href="/" class="menu-link">
@@ -219,19 +213,40 @@ export default {
                   </a>
                 </li>
                 <li class="menu-item">
-                      <a
-                          class="menu-link"
-                          @click="onLogout"
+                  <a class="menu-link" @click="onLogout">
+                    <span class="svg-icon svg-icon-primary svg-icon-2x"
+                      ><svg
+                        class="red"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 24 24"
+                        version="1.1"
+                      >
+                        <g
+                          stroke="none"
+                          stroke-width="1"
+                          fill="none"
+                          fill-rule="evenodd"
                         >
-                        <span class="svg-icon svg-icon-primary svg-icon-2x"><svg class="red" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-    <g stroke="none"  stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect x="0" y="0" width="24" height="24"/>
-        <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
-        <path d="M14.5,11 C15.0522847,11 15.5,11.4477153 15.5,12 L15.5,15 C15.5,15.5522847 15.0522847,16 14.5,16 L9.5,16 C8.94771525,16 8.5,15.5522847 8.5,15 L8.5,12 C8.5,11.4477153 8.94771525,11 9.5,11 L9.5,10.5 C9.5,9.11928813 10.6192881,8 12,8 C13.3807119,8 14.5,9.11928813 14.5,10.5 L14.5,11 Z M12,9 C11.1715729,9 10.5,9.67157288 10.5,10.5 L10.5,11 L13.5,11 L13.5,10.5 C13.5,9.67157288 12.8284271,9 12,9 Z" fill="#000000"/>
-    </g>
-</svg><!--end::Svg Icon--></span>
-                          <span class="menu-text ml-4">Oturumu Kapat</span>
-                        </a>
+                          <rect x="0" y="0" width="24" height="24" />
+                          <circle
+                            fill="#000000"
+                            opacity="0.3"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                          />
+                          <path
+                            d="M14.5,11 C15.0522847,11 15.5,11.4477153 15.5,12 L15.5,15 C15.5,15.5522847 15.0522847,16 14.5,16 L9.5,16 C8.94771525,16 8.5,15.5522847 8.5,15 L8.5,12 C8.5,11.4477153 8.94771525,11 9.5,11 L9.5,10.5 C9.5,9.11928813 10.6192881,8 12,8 C13.3807119,8 14.5,9.11928813 14.5,10.5 L14.5,11 Z M12,9 C11.1715729,9 10.5,9.67157288 10.5,10.5 L10.5,11 L13.5,11 L13.5,10.5 C13.5,9.67157288 12.8284271,9 12,9 Z"
+                            fill="#000000"
+                          />
+                        </g></svg
+                      ><!--end::Svg Icon--></span
+                    >
+                    <span class="menu-text ml-4">Oturumu Kapat</span>
+                  </a>
                   <!-- <button class="btn btn-danger" @click="onLogout">
                     Çıkış Yap
                   </button> -->
@@ -240,23 +255,36 @@ export default {
                   <h4 class="menu-text">İçerik Yönetimi</h4>
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li class="menu-item" aria-haspopup="true">
-                 <nuxt-link to="/" class="menu-link">
-                    <i class="menu-icon flaticon-edit"></i>
-                    <span class="menu-text">CRUD</span>
-                 </nuxt-link>
+                <li
+                  class="menu-item menu-item-submenu"
+                  aria-haspopup="true"
+                  data-menu-toggle="hover"
+                >
+                  <a href="javascript:;" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon-graphic"></i>
+                    <span class="menu-text">Blog</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+                  <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/blog" class="menu-link">
+                          <i class="menu-bullet menu-bullet-dot">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Blog Yazılarım</span>
+                        </nuxt-link>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
+
                 <li class="menu-item" aria-haspopup="true">
-                 <nuxt-link to="/" class="menu-link">
-                    <i class="menu-icon flaticon-edit"></i>
-                    <span class="menu-text">CRUD tek satır</span>
-                 </nuxt-link>
-                </li>
-                <li class="menu-item" aria-haspopup="true">
-                 <nuxt-link to="/" class="menu-link">
+                  <nuxt-link to="/" class="menu-link">
                     <i class="menu-icon flaticon-upload-1"></i>
                     <span class="menu-text">Image Upload</span>
-                 </nuxt-link>
+                  </nuxt-link>
                 </li>
                 <li
                   class="menu-item menu-item-submenu"
@@ -265,7 +293,7 @@ export default {
                 >
                   <a href="javascript:;" class="menu-link menu-toggle">
                     <i class="menu-icon flaticon-web"></i>
-                    <span class="menu-text">Çoklu Menü</span>
+                    <span class="menu-text">3 lü</span>
                     <i class="menu-arrow"></i>
                   </a>
                   <div class="menu-submenu">
@@ -300,12 +328,12 @@ export default {
                           <i class="menu-arrow"></i>
                           <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                               <nuxt-link to="/" class="menu-link">
-                                      <i class="menu-bullet menu-bullet-dot">
+                              <nuxt-link to="/" class="menu-link">
+                                <i class="menu-bullet menu-bullet-dot">
                                   <span></span>
                                 </i>
                                 <span class="menu-text">1-2-1</span>
-                            </nuxt-link>
+                              </nuxt-link>
                             </li>
                           </ul>
                         </div>
@@ -352,7 +380,6 @@ export default {
                     </ul>
                   </div>
                 </li>
-  
               </ul>
               <!--end::Menu Nav-->
             </div>
@@ -388,4 +415,3 @@ export default {
     <!-- <Header /> -->
   </div>
 </template>
-

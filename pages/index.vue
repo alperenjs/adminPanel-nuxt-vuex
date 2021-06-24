@@ -1,16 +1,15 @@
 <template>
-<div>
-
-
-</div>
+  <div>
+    <h1>normal içerik indexi</h1>
+  </div>
 </template>
 
 <script>
 export default {
-  layout: "admin",
+  layout: "default",
   head() {
     return {
-      title: "Admin ekranı component",
+      title: "Normal ekran index",
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
@@ -21,14 +20,7 @@ export default {
       ],
     };
   },
-  methods: {
-    onLogout() {
-      this.$store.dispatch("auth/logout");
-      this.$router.push("/admin/auth");
-    },
-
-  },
-  mounted(){
-  }
+  methods: {},
+  mounted() {},
 };
 </script>
