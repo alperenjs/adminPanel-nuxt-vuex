@@ -8,3 +8,15 @@
 .aside-menu .menu-nav>.menu-section .menu-text {
     text-transform: unset;
 }
+.aside:hover{
+    width: 265px!important;
+}
+.aside:hover  .brand-logo{
+    display: flex!important;
+}
+.aside:hover  .menu-arrow{
+    display: flex!important;
+}
+.aside:hover  .menu-text{
+    display: flex!important;
+}

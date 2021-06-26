@@ -188,7 +188,7 @@
                   <h4 class="menu-text">İçerik Yönetimi</h4>
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li
+                <li @click="menuSubMenu"
                   class="menu-item menu-item-submenu"
                   aria-haspopup="true"
                   data-menu-toggle="hover"
@@ -219,7 +219,7 @@
                     <span class="menu-text">Image Upload</span>
                   </nuxt-link>
                 </li>
-                <li
+                <li @click="menuSubMenu"
                   class="menu-item menu-item-submenu"
                   aria-haspopup="true"
                   data-menu-toggle="hover"
@@ -229,47 +229,16 @@
                     <span class="menu-text">3 lü</span>
                     <i class="menu-arrow"></i>
                   </a>
-                  <div class="menu-submenu">
+                   <div class="menu-submenu">
                     <i class="menu-arrow"></i>
                     <ul class="menu-subnav">
-                      <li
-                        class="menu-item menu-item-parent"
-                        aria-haspopup="true"
-                      >
-                        <span class="menu-link">
-                          <span class="menu-text">Örnek 1 - 1</span>
-                        </span>
-                      </li>
-                      <li
-                        class="menu-item menu-item-submenu"
-                        aria-haspopup="true"
-                        data-menu-toggle="hover"
-                      >
-                        <a href="javascript:;" class="menu-link menu-toggle">
-                          <i class="menu-bullet menu-bullet-line">
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/blog" class="menu-link">
+                          <i class="menu-bullet menu-bullet-dot">
                             <span></span>
                           </i>
-                          <span class="menu-text">Örnek 1 - 2</span>
-                          <span class="menu-label">
-                            <span class="label label-rounded label-primary"
-                              >1</span
-                            >
-                          </span>
-                          <i class="menu-arrow"></i>
-                        </a>
-                        <div class="menu-submenu">
-                          <i class="menu-arrow"></i>
-                          <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
-                              <nuxt-link to="/" class="menu-link">
-                                <i class="menu-bullet menu-bullet-dot">
-                                  <span></span>
-                                </i>
-                                <span class="menu-text">1-2-1</span>
-                              </nuxt-link>
-                            </li>
-                          </ul>
-                        </div>
+                          <span class="menu-text">Blog Yazılarım</span>
+                        </nuxt-link>
                       </li>
                     </ul>
                   </div>
@@ -278,7 +247,7 @@
                   <h4 class="menu-text">Kısım</h4>
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li
+                <li @click="menuSubMenu"
                   class="menu-item menu-item-submenu"
                   aria-haspopup="true"
                   data-menu-toggle="hover"
@@ -475,6 +444,9 @@ export default {
         $(".aside").css("left", "-295px");
       }
     },
+    menuSubMenu(event){
+     $(event.target).closest('li').toggleClass("menu-item-open")
+    },
     resizeCalc(){
       let width =  $(window).width();
       this.resizeWidth = width;
@@ -487,7 +459,7 @@ export default {
     }
   },
   created() {
-      window.addEventListener('resize', this.resizeCalc)
+      window.addEventListener('resize', this.resizeCalc);
   }
 };
 </script>
