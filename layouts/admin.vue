@@ -346,41 +346,7 @@ export default {
 
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/plugins/global/plugins.bundle.css",
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/style.bundle.min.css",
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/themes/layout/header/base/dark.css",
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/themes/layout/header/menu/dark.css",
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/themes/layout/brand/dark.css",
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/themes/layout/aside/dark.css",
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/custom/adminLayout.css",
-        },
+       
       ],
     };
   },
