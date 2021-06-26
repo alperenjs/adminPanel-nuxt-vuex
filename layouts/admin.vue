@@ -1,76 +1,3 @@
-<script>
-// import Header from "~/components/Header";
-export default {
-  middleware: ["check-auth", "auth"],
-  component: {
-    // Header,
-  },
-  head() {
-    return {
-      title: "layout headi",
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        {
-          hid: "description",
-          name: "description",
-          content: "My custom description"
-        }
-      ],
-      bodyAttrs: {
-        class:
-          " header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading",
-        id: "kt_body"
-      },
-
-      link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/plugins/global/plugins.bundle.css"
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/style.bundle.min.css"
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/themes/layout/header/base/dark.css"
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/themes/layout/header/menu/dark.css"
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/themes/layout/brand/dark.css"
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/themes/layout/aside/dark.css"
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "/css/custom/adminLayout.css"
-        }
-      ]
-    };
-  },
-  methods: {
-    onLogout() {
-      this.$store.dispatch("auth/logout");
-      this.$router.push("/admin/auth");
-    }
-  }
-};
-</script>
-
 <template>
   <div>
     <!--begin::Main-->
@@ -90,6 +17,7 @@ export default {
         <button
           class="btn p-0 burger-icon burger-icon-left"
           id="kt_aside_mobile_toggle"
+          @click="toggleMobileSideMenu"
         >
           <span></span>
         </button>
@@ -104,6 +32,7 @@ export default {
         <!--begin::Aside-->
         <div
           class="aside aside-left aside-fixed d-flex flex-column flex-row-auto"
+          v-bind:style="{ width: computedWidth }"
           id="kt_aside"
         >
           <!--begin::Brand-->
@@ -114,7 +43,11 @@ export default {
             </a>
             <!--end::Logo-->
             <!--begin::Toggle-->
-            <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
+            <button
+              class="brand-toggle btn btn-sm px-0"
+              @click="toggleSideMenu"
+              id="sideToggle"
+            >
               <span class="svg-icon svg-icon svg-icon-xl">
                 <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-left.svg-->
                 <svg
@@ -281,7 +214,7 @@ export default {
                 </li>
 
                 <li class="menu-item" aria-haspopup="true">
-                  <nuxt-link to="/" class="menu-link">
+                  <nuxt-link to="/admin/blog" class="menu-link">
                     <i class="menu-icon flaticon-upload-1"></i>
                     <span class="menu-text">Image Upload</span>
                   </nuxt-link>
@@ -415,3 +348,147 @@ export default {
     <!-- <Header /> -->
   </div>
 </template>
+
+<script>
+import $ from "jquery";
+import jQuery from "jquery";
+
+export default {
+  middleware: ["check-auth", "auth"],
+  component: {
+    // Header,
+  },
+  head() {
+    return {
+      title: "layout headi",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "My custom description",
+        },
+      ],
+      bodyAttrs: {
+        class:
+          " header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading",
+        id: "kt_body",
+      },
+
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "/plugins/global/plugins.bundle.css",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "/css/style.bundle.min.css",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "/css/themes/layout/header/base/dark.css",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "/css/themes/layout/header/menu/dark.css",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "/css/themes/layout/brand/dark.css",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "/css/themes/layout/aside/dark.css",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "/css/custom/adminLayout.css",
+        },
+      ],
+    };
+  },
+  data() {
+    return {
+      isSideClosed: false,
+      width: "265px",
+      resizeWidth: 2100
+    };
+  },
+  computed: {
+    computedWidth: function () {
+      return this.width;
+    },
+    resizeComputed: function(){
+      return this.resizeWidth
+    }
+  
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch("auth/logout");
+      this.$router.push("/admin/auth");
+    },
+    toggleSideMenu(event) {
+       if (this.resizeWidth > 991) {
+        this.width = "265px";
+      }
+      if (!this.isSideClosed) {
+        this.isSideClosed = true;
+        this.width = "70px";
+        $(".menu-text, .brand-logo, .menu-arrow").hide();
+        $(".brand .brand-toggle .svg-icon svg").css(
+          "transform",
+          "rotate(180deg)"
+        );
+        $(".brand .brand-toggle .svg-icon svg g path").css("fill", "#3699FF");
+      } else {
+        this.isSideClosed = false;
+        this.width = "265px";
+             $(".brand .brand-toggle .svg-icon svg").css(
+          "transform",
+          "rotate(0)"
+        );
+        $(".menu-text, .brand-logo, .menu-arrow").show();
+      }
+    },
+    toggleMobileSideMenu(event) {
+      if (this.resizeWidth <= 991) {
+        if(this.width != "265px"){
+        this.isSideClosed = true;
+        this.width = "265px";
+        }
+      }
+      if (!this.isSideClosed) {
+        this.isSideClosed = true;
+        $(".aside").css("left", "0");
+      } else {
+        this.isSideClosed = false;
+        $(".menu-text, .brand-logo, .menu-arrow").show();
+        $(".aside").css("left", "-295px");
+      }
+    },
+    resizeCalc(){
+      let width =  $(window).width();
+      this.resizeWidth = width;
+      if(width > 991){
+         this.isSideClosed = false;
+        this.width = "265px";
+        $(".menu-text, .brand-logo, .menu-arrow").show();
+        $(".aside").css("left", "0");
+      }
+    }
+  },
+  created() {
+      window.addEventListener('resize', this.resizeCalc)
+  }
+};
+</script>
+

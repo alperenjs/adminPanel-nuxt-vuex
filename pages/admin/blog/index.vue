@@ -1,7 +1,10 @@
 <template>
-<div>
-
-<h1>blog içeriği</h1>
+<div class="card-body">
+<h1>blog sayfası</h1>
+<div class="row">
+  <div class="col-6">1</div>
+  <div class="col-6">1</div>
+</div>
 </div>
 </template>
 
@@ -15,9 +18,9 @@ export default {
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
-          hid: "description",
-          name: "description",
-          content: "My custom description",
+     hid: 'description',
+            name: 'description',
+            content: 'Alperen Sözen'
         },
       ],
     };

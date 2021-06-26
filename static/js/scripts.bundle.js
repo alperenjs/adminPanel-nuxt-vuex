@@ -1,5 +1,4 @@
 "use strict";
-
 // Component Definition
 var KTApp = function() {
     /** @type {object} colors State colors **/
@@ -9259,7 +9258,6 @@ KTUtil.ready(function() {
 });
 
 "use strict";
-
 var KTLayoutAsideMenu = function() {
     // Private properties
     var _body;
@@ -9304,7 +9302,7 @@ var KTLayoutAsideMenu = function() {
 				expandAll: false // allow having multiple expanded accordions in the menu
 			}
 		});
-	}
+	}();
 
     var _initHover = function() {
         // Handle Minimized Aside Hover
@@ -11184,3 +11182,5 @@ if (typeof module !== 'undefined') {
 
 var KTLayoutSearchInline = KTLayoutSearch;
 var KTLayoutSearchOffcanvas = KTLayoutSearch;
+
+

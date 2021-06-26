@@ -1,10 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+ ssr: false,
   head: {
     title: 'adminPanel-nuxt-vuex',
-    htmlAttrs: {
-      lang: 'en'
-    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -13,18 +11,8 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"},
-      {rel:"stylesheet", href:"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"},
     ],
     script: [   
-      {
-      src: "/plugins/global/plugins.bundle.js",
-      },
-      {
-        src: "/js/scripts.bundle.min.js",
-      },
-      {
-        src: "/js/settings.js",
-      },
     ],
   },
 
