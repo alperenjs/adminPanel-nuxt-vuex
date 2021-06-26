@@ -64,7 +64,7 @@ export default {
   plugins: [
     '~plugins/runFirebase.js', //firebase i buradan başlatıyorum,
   ],
-
+  generate: { fallback: '404.html' },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 

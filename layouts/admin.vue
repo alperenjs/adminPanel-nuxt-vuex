@@ -8,7 +8,7 @@
     >
       <!--begin::Logo-->
       <a href="/">
-        <img alt="Logo" src="~/assets/images/logo.png" />
+        <img alt="Logo" src="/images/logo.png" />
       </a>
       <!--end::Logo-->
       <!--begin::Toolbar-->
@@ -39,7 +39,7 @@
           <div class="brand flex-column-auto" id="kt_brand">
             <!--begin::Logo-->
             <a href="/" class="brand-logo">
-              <img alt="Logo" src="~/assets/images/logo.png" />
+              <img alt="Logo" src="/images/logo.png" />
             </a>
             <!--end::Logo-->
             <!--begin::Toggle-->
