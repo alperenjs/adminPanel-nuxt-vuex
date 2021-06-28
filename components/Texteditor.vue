@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <button @click="updatedContent">printOut</button>
     <vue-editor v-model="htmlForEditor"></vue-editor>
   </div>
 </template>

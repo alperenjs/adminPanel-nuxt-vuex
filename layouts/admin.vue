@@ -188,7 +188,8 @@
                   <h4 class="menu-text">İçerik Yönetimi</h4>
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li @click="menuSubMenu"
+                <li
+                  @click="menuSubMenu"
                   class="menu-item menu-item-submenu"
                   aria-haspopup="true"
                   data-menu-toggle="hover"
@@ -203,10 +204,18 @@
                     <ul class="menu-subnav">
                       <li class="menu-item" aria-haspopup="true">
                         <nuxt-link to="/admin/blog" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
+                          <i class="mr-2 menu-bullet far fa-edit">
                             <span></span>
                           </i>
                           <span class="menu-text">Blog Yazılarım</span>
+                        </nuxt-link>
+                      </li>
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/blog/yeniyazi" class="menu-link">
+                          <i class="mr-2 menu-bullet fas fa-plus">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Yeni Yazı Ekle</span>
                         </nuxt-link>
                       </li>
                     </ul>
@@ -219,7 +228,8 @@
                     <span class="menu-text">Image Upload</span>
                   </nuxt-link>
                 </li>
-                <li @click="menuSubMenu"
+                <li
+                  @click="menuSubMenu"
                   class="menu-item menu-item-submenu"
                   aria-haspopup="true"
                   data-menu-toggle="hover"
@@ -229,7 +239,7 @@
                     <span class="menu-text">3 lü</span>
                     <i class="menu-arrow"></i>
                   </a>
-                   <div class="menu-submenu">
+                  <div class="menu-submenu">
                     <i class="menu-arrow"></i>
                     <ul class="menu-subnav">
                       <li class="menu-item" aria-haspopup="true">
@@ -247,7 +257,8 @@
                   <h4 class="menu-text">Kısım</h4>
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li @click="menuSubMenu"
+                <li
+                  @click="menuSubMenu"
                   class="menu-item menu-item-submenu"
                   aria-haspopup="true"
                   data-menu-toggle="hover"
@@ -300,7 +311,7 @@
             <!--begin::Entry-->
             <div class="d-flex flex-column-fluid">
               <!--begin::Container-->
-              <div class="container">
+              <div class="container-fluid">
                 <Nuxt />
               </div>
               <!--end::Container-->
@@ -344,27 +355,23 @@ export default {
         id: "kt_body",
       },
 
-      link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-       
-      ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     };
   },
   data() {
     return {
       isSideClosed: false,
       width: "265px",
-      resizeWidth: 2100
+      resizeWidth: 2100,
     };
   },
   computed: {
     computedWidth: function () {
       return this.width;
     },
-    resizeComputed: function(){
-      return this.resizeWidth
-    }
-  
+    resizeComputed: function () {
+      return this.resizeWidth;
+    },
   },
   methods: {
     onLogout() {
@@ -372,7 +379,7 @@ export default {
       this.$router.push("/admin/auth");
     },
     toggleSideMenu(event) {
-       if (this.resizeWidth > 991) {
+      if (this.resizeWidth > 991) {
         this.width = "265px";
       }
       if (!this.isSideClosed) {
@@ -387,18 +394,15 @@ export default {
       } else {
         this.isSideClosed = false;
         this.width = "265px";
-             $(".brand .brand-toggle .svg-icon svg").css(
-          "transform",
-          "rotate(0)"
-        );
+        $(".brand .brand-toggle .svg-icon svg").css("transform", "rotate(0)");
         $(".menu-text, .brand-logo, .menu-arrow").show();
       }
     },
     toggleMobileSideMenu(event) {
       if (this.resizeWidth <= 991) {
-        if(this.width != "265px"){
-        this.isSideClosed = true;
-        this.width = "265px";
+        if (this.width != "265px") {
+          this.isSideClosed = true;
+          this.width = "265px";
         }
       }
       if (!this.isSideClosed) {
@@ -410,23 +414,23 @@ export default {
         $(".aside").css("left", "-295px");
       }
     },
-    menuSubMenu(event){
-     $(event.target).closest('li').toggleClass("menu-item-open")
+    menuSubMenu(event) {
+      $(event.target).closest("li").toggleClass("menu-item-open");
     },
-    resizeCalc(){
-      let width =  $(window).width();
+    resizeCalc() {
+      let width = $(window).width();
       this.resizeWidth = width;
-      if(width > 991){
-         this.isSideClosed = false;
+      if (width > 991) {
+        this.isSideClosed = false;
         this.width = "265px";
         $(".menu-text, .brand-logo, .menu-arrow").show();
         $(".aside").css("left", "0");
       }
-    }
+    },
   },
   created() {
-      window.addEventListener('resize', this.resizeCalc);
-  }
+    window.addEventListener("resize", this.resizeCalc);
+  },
 };
 </script>
 

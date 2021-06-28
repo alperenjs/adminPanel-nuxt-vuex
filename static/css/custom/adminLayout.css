@@ -1,3 +1,6 @@
+.menu-link{
+    align-items: center!important;
+}
 .menu-link .pulse .pulse-ring {
     left: -11px;
     top: -7px;

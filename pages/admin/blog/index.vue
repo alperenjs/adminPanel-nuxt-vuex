@@ -1,17 +1,12 @@
 <template>
   <div class="card-body">
-    <Texteditor />
   </div>
 </template>
 
 
 <script>
-import Texteditor from "@/components/Texteditor.vue";
 
 export default {
-  components: {
-    Texteditor,
-  },
   layout: "admin",
   head() {
     return {
