@@ -1,16 +1,17 @@
 <template>
-<div class="card-body">
-<h1>blog sayfası</h1>
-<div class="row">
-  <div class="col-6">1</div>
-  <div class="col-6">1</div>
-</div>
-</div>
+  <div class="card-body">
+    <Texteditor />
+  </div>
 </template>
 
 
 <script>
+import Texteditor from "@/components/Texteditor.vue";
+
 export default {
+  components: {
+    Texteditor,
+  },
   layout: "admin",
   head() {
     return {
@@ -18,21 +19,24 @@ export default {
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
-     hid: 'description',
-            name: 'description',
-            content: 'Alperen Sözen'
+          hid: "description",
+          name: "description",
+          content: "Alperen Sözen",
         },
       ],
     };
   },
+
+  data() {
+    return {};
+  },
+
   methods: {
     onLogout() {
       this.$store.dispatch("auth/logout");
       this.$router.push("/admin/auth");
     },
-
   },
-  mounted(){
-  }
+  mounted() {},
 };
 </script>
