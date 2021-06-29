@@ -1,98 +1,88 @@
-.menu-link{
-    align-items: center!important;
+.menu-link {
+  align-items: center !important;
 }
 .menu-link .pulse .pulse-ring {
-    left: -11px;
-    top: -7px;
+  left: -11px;
+  top: -7px;
 }
-.menu-link .svg-icon{
-    margin-left: -4px;
+.menu-link .svg-icon {
+  margin-left: -4px;
 }
-.aside-menu .menu-nav>.menu-section .menu-text {
-    text-transform: unset;
+.aside-menu .menu-nav > .menu-section .menu-text {
+  text-transform: unset;
 }
-.aside:hover{
-    width: 265px!important;
+.aside:hover {
+  width: 265px !important;
 }
-.aside:hover  .brand-logo{
-    display: flex!important;
+.aside:hover .brand-logo {
+  display: flex !important;
 }
-.aside:hover  .menu-arrow{
-    display: flex!important;
+.aside:hover .menu-arrow {
+  display: flex !important;
 }
-.aside:hover  .menu-text{
-    display: flex!important;
+.aside:hover .menu-text {
+  display: flex !important;
+}
+/*#region tagger */
+
+.tagger-container .tags-input {
+    list-style: none;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 5px;
+    height: 26px;
+    font-size: 14px;
+    background: #f3f3f3;
+    width: 100%;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+
+  .tagger-container .tags-input li {
+  float: left;
 }
 
-#wrapper
-{
+.tagger-container .tags {
+  background: #28343d;
+  color: #00b3ff;
+  padding: 5px 20px 5px 8px;
+  border-radius: 2px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+.tagger-container ul.tags-input {
+  height: min-content;
+}
+.tagger-container .tags i {
+  position: absolute;
+  right: 6px;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  cursor: pointer;
+  opacity: 0.7;
+  font-size: 12px;
 }
 
-p 
-{
-  margin:0 0 5px 0;
+.tagger-container .tags i:hover {
+  opacity: 1;
 }
 
-.tags-input 
-{
-  	list-style : none;   
-  	border:1px solid #ccc;
-  	display:inline-block;
-  	padding:5px;
-  	height: 26px;
-    font-size:14px;
-    background:#f3f3f3;
-    width: 600px;
-    border-radius:2px;
-    overflow:hidden;
+.tagger-container .tags-new input[type="text"] {
+  border: 0;
+  margin: 0;
+  padding: 0 0 0 3px;
+  font-size: 14px;
+  margin-top: 5px;
+  background: transparent;
 }
 
-.tags-input li
-{
-  	float:left;
+.tagger-container .tags-new input[type="text"]:focus {
+  outline: none;
 }
 
-.tags
-{
-  	background:#28343d;
-      color: #00b3ff;
-  	padding:5px 20px 5px 8px;
-  	border-radius:2px;
-  	margin-right: 5px;
-  	position: relative;
-}
-ul.tags-input{
-    height: 43px;
-}
-.tags i
-{
-	position: absolute; 
-	right:6px;
-	top:3px;
-	width: 8px;
-	height: 8px;
-	content:'';
-	cursor:pointer;
-	opacity: .7;
-  font-size:12px;
-}
 
-.tags i:hover
-{
-	opacity: 1;
-}
-
-.tags-new input[type="text"]
-{
-  border:0;
-	margin: 0;
-	padding: 0 0 0 3px;
-	font-size: 14px;
-	margin-top: 5px;
-  background:transparent;
-}
-
-.tags-new input[type="text"]:focus
-{
-  	outline:none; 
-}
+/*#endregion tagger */

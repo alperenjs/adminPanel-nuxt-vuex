@@ -51,7 +51,7 @@
         </div>
         <div class="form-group row">
           <label class="col-2 col-form-label">SEO için Etiketler</label>
-          <div id="wrapper" class="col-10">
+          <div class="col-10 tagger-container">
             <ul id="tags-input" class="tags-input">
               <li class="tags">My tag<i class="fa fa-times"></i></li>
               <li class="tags">My tag2<i class="fa fa-times"></i></li>
