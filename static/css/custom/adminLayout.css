@@ -23,3 +23,76 @@
 .aside:hover  .menu-text{
     display: flex!important;
 }
+
+#wrapper
+{
+}
+
+p 
+{
+  margin:0 0 5px 0;
+}
+
+.tags-input 
+{
+  	list-style : none;   
+  	border:1px solid #ccc;
+  	display:inline-block;
+  	padding:5px;
+  	height: 26px;
+    font-size:14px;
+    background:#f3f3f3;
+    width: 600px;
+    border-radius:2px;
+    overflow:hidden;
+}
+
+.tags-input li
+{
+  	float:left;
+}
+
+.tags
+{
+  	background:#28343d;
+      color: #00b3ff;
+  	padding:5px 20px 5px 8px;
+  	border-radius:2px;
+  	margin-right: 5px;
+  	position: relative;
+}
+ul.tags-input{
+    height: 43px;
+}
+.tags i
+{
+	position: absolute; 
+	right:6px;
+	top:3px;
+	width: 8px;
+	height: 8px;
+	content:'';
+	cursor:pointer;
+	opacity: .7;
+  font-size:12px;
+}
+
+.tags i:hover
+{
+	opacity: 1;
+}
+
+.tags-new input[type="text"]
+{
+  border:0;
+	margin: 0;
+	padding: 0 0 0 3px;
+	font-size: 14px;
+	margin-top: 5px;
+  background:transparent;
+}
+
+.tags-new input[type="text"]:focus
+{
+  	outline:none; 
+}

@@ -46,9 +46,13 @@ export default {
         type: "text/css",
         href: "/css/custom/adminLayout.css",
       },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/plugins/global/toastr.min.css",
+      }
     ],
-    script: [   
-    ],
+   
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -62,7 +66,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~plugins/runFirebase.js', //firebase i buradan başlatıyorum,
+    '~plugins/runFirebase.js', 
+    //firebase i buradan başlatıyorum,
   ],
   generate: { fallback: '404.html' },
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -78,5 +83,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    
   }
 }

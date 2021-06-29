@@ -332,6 +332,8 @@
 <script>
 import $ from "jquery";
 import jQuery from "jquery";
+import bootstrap from 'bootstrap'
+
 
 export default {
   middleware: ["check-auth", "auth"],
@@ -354,8 +356,6 @@ export default {
           " header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading",
         id: "kt_body",
       },
-
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     };
   },
   data() {

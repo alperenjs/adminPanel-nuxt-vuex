@@ -1,16 +1,17 @@
 <template>
-  <div class="hello">
-    <input @change="previewImage" type="file" accept="image/*" />
-    <p v-show="loading">Progress: {{ uploadValue.toFixed() + "%" }}</p>
-    <div v-if="picture" class="row">
-      <img :src="picture" style="height: 100" />
+  <div>
+       <div v-if="picture" class="row">
+      <img :src="picture" style="height: 200px" />
     </div>
+    <input class="form-control" @change="previewImage" type="file" accept="image/*" />
+    <p v-show="loading">Progress: {{ uploadValue.toFixed() + "%" }}</p>
+ 
     <button v-if="imageData && !loading" @click="onUpload">Yükle</button>
   </div>
 </template>
 
 <script>
-
+import toastr from "~/static/plugins/global/toastr.min.js"
 import firebase from "firebase/app";
 import 'firebase/storage';  // <----
 import db from "~/plugins/firebaseInit.js";
@@ -30,6 +31,7 @@ export default {
       this.uploadValue = 0;
       this.picture = null;
       this.imageData = event.target.files[0];
+      this.onUpload();
     },
     onUpload() {
       this.loading = true;
@@ -65,16 +67,9 @@ export default {
         .catch((error) => {
           toastr.warning(
             "Sayfayı yenileyin, eğer devam ederse destek isteyin",
-            "Hata!"
+            "Fotoğraf Yüklenirken Hata!"
           );
         })
-        .then((docRef) => {
-          setTimeout(() => {
-            this.$router.go("admin/blog");
-          }, 800);
-        })
-
-        .catch((error) => console.log(error.message));
     },
   },
 };
