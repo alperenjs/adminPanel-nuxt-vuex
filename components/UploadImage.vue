@@ -1,6 +1,7 @@
 <template>
   <div>
-       <div v-if="picture" class="row">
+  
+    <div v-if="picture" class="row">
       <img :src="picture" style="height: 200px" />
     </div>
     <input class="form-control" @change="previewImage" type="file" accept="image/*" />
@@ -53,7 +54,9 @@ export default {
           this.uploadValue = 100;
           storageRef.snapshot.ref.getDownloadURL().then((url) => {
             this.picture = url;
-            this.addToPhotos(url);
+  this.downloadedImgURL = url
+this.addToPhotos(url);
+this.passEvent(this.picture);
           });
         }
       );
@@ -71,6 +74,10 @@ export default {
           );
         })
     },
+      passEvent(data)
+    {
+      this.$emit('uploadImage',data)
+    }
   },
 };
 </script>

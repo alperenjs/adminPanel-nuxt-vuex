@@ -1,5 +1,6 @@
 <template>
   <div class="card card-custom">
+    <h1> downloaded image url geliyor, bunu veritabanına basıcaz {{downloadedImgURL}}</h1> 
     <div class="card-header">
       <h3 class="card-title">Yeni Yazı</h3>
     </div>
@@ -20,7 +21,7 @@
         <div class="form-group row">
           <label class="col-2 col-form-label">Kapak Resmi</label>
           <div class="col-10">
-            <UploadImage ref="uploadImage" />
+            <UploadImage  @uploadImage="emitUrlfromComponent($event)" ref="uploadImage" />
           </div>
         </div>
         <div class="form-group row">
@@ -70,7 +71,7 @@
         </div>
       </div>
     </form>
-    <button @click="customSubmit" class="btn btn-success mr-2">Submit</button>
+    <button @click="customSubmit" class="btn btn-success mr-2">Ekle</button>
   </div>
 </template>
 
@@ -104,6 +105,7 @@ export default {
   data() {
     return {
       tagsContainer: ([] = []),
+      downloadedImgURL  : ""
     };
   },
 
@@ -127,6 +129,10 @@ export default {
         let product = $(li);
         self.tagsContainer.push(product.text());
       });
+    },
+     emitUrlfromComponent(data)
+    {
+      this.downloadedImgURL=data;
     },
     runTagger(){
        function existingTag(text) {
@@ -170,11 +176,12 @@ export default {
         $(this).parent("li").remove();
       });
     });
-    }
+
   },
   mounted() {
     this.runTagger();
     this.getTags();
   },
+  }
 };
 </script>
