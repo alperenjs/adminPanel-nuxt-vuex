@@ -120,10 +120,6 @@ export default {
   },
 
   methods: {
-    onLogout() {
-      this.$store.dispatch("auth/logout");
-      this.$router.push("/admin/auth");
-    },
     customSubmit(e) {
       e.preventDefault();
       var uploadImageComponent = this.$refs.uploadImage;
