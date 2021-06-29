@@ -1,20 +1,24 @@
 <template>
   <div>
-  
     <div v-if="picture" class="row">
       <img :src="picture" style="height: 200px" />
     </div>
-    <input class="form-control" @change="previewImage" type="file" accept="image/*" />
+    <input
+      class="form-control"
+      @change="previewImage"
+      type="file"
+      accept="image/*"
+    />
     <p v-show="loading">Progress: {{ uploadValue.toFixed() + "%" }}</p>
- 
+
     <button v-if="imageData && !loading" @click="onUpload">Yükle</button>
   </div>
 </template>
 
 <script>
-import toastr from "~/static/plugins/global/toastr.min.js"
+import toastr from "~/static/plugins/global/toastr.min.js";
 import firebase from "firebase/app";
-import 'firebase/storage';  // <----
+import "firebase/storage"; // <----
 import db from "~/plugins/firebaseInit.js";
 
 export default {
@@ -54,9 +58,9 @@ export default {
           this.uploadValue = 100;
           storageRef.snapshot.ref.getDownloadURL().then((url) => {
             this.picture = url;
-  this.downloadedImgURL = url
-this.addToPhotos(url);
-this.passEvent(this.picture);
+            this.downloadedImgURL = url;
+            this.addToPhotos(url);
+            this.passEvent(this.picture);
           });
         }
       );
@@ -72,12 +76,11 @@ this.passEvent(this.picture);
             "Sayfayı yenileyin, eğer devam ederse destek isteyin",
             "Fotoğraf Yüklenirken Hata!"
           );
-        })
+        });
     },
-      passEvent(data)
-    {
-      this.$emit('uploadImage',data)
-    }
+    passEvent(data) {
+      this.$emit("uploadImage", data);
+    },
   },
 };
 </script>
