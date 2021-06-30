@@ -83,6 +83,11 @@
 .tagger-container .tags-new input[type="text"]:focus {
   outline: none;
 }
-
+.uploaded-image-preview{
+  height: auto;
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+}
 
 /*#endregion tagger */

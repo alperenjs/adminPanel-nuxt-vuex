@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-editor v-model="htmlForEditor"></vue-editor>
+    <vue-editor  @keyup="updatedContent" v-model="htmlForEditor"></vue-editor>
   </div>
 </template>
 
@@ -17,14 +17,21 @@ export default {
       htmlForEditor: null,
     };
   },
-
+    watch: {   // vuex'deki değerleri dinliyor, değiştiği an event fırlatıyoruz
+      htmlForEditor: function (val) {
+        this.passText(this.htmlForEditor)
+      },
+   
+    },
   methods: {
     setEditorContent() {
       //veriyi sonradan çekip mounted ile editöre basıyor
       this.htmlForEditor = "<h1>Html For Editor</h1>";
     },
     updatedContent() {
-      console.log(this.htmlForEditor);
+    },
+    passText(data) {
+      this.$emit("uploadText", data);
     },
   },
   mounted() {

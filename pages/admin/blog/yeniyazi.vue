@@ -22,8 +22,8 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-2 col-form-label">Kapak Resmi</label>
-          <div class="col-10">
+          <label class="col-md-2 col-12 col-form-label">Kapak Resmi</label>
+          <div class="col-md-10 col-12">
             <UploadImage
               @uploadImage="emitUrlfromComponent($event)"
               ref="uploadImage"
@@ -31,34 +31,35 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-2 col-form-label">Başlık</label>
-          <div class="col-10">
+          <label class="col-md-2 col-12 col-form-label">Başlık</label>
+          <div class="col-md-10 col-12">
             <input
               class="form-control"
               type="text"
               value="Yeni Bir Blog!"
               id="baslik"
+              v-model="title"
             />
           </div>
         </div>
         <div class="form-group row">
-          <label for="example-email-input" class="col-2 col-form-label"
-            >Metin</label
-          >
-          <div class="col-10">
-            <Texteditor />
+          <label for="example-email-input" class="col-md-2 col-12 col-form-label"
+            >Metin</label          >
+          <div class="col-md-10 col-12">
+            <Texteditor
+              @uploadText="emitTextfromComponent($event)"
+             />
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-2 col-form-label">SEO için Etiketler</label>
-          <div class="col-10 tagger-container">
+          <label class="col-md-2 col-12 col-form-label">SEO için Etiketler</label>
+          <div class="col-md-10 col-12 tagger-container">
             <ul id="tags-input" class="tags-input">
-              <li class="tags">My tag<i class="fa fa-times"></i></li>
-              <li class="tags">My tag2<i class="fa fa-times"></i></li>
-              <li class="tags">My tag3<i class="fa fa-times"></i></li>
-              <li class="tags">My tag4<i class="fa fa-times"></i></li>
+               <li class="tags existed" v-for="item in tagsContainer" :key="item">
+                      {{ item }}<i class="fa fa-times"></i>
+               </li>
               <li class="tags-new">
-                <input type="text" />
+                <input type="text"/>
               </li>
             </ul>
           </div>
@@ -69,12 +70,13 @@
           <div class="col-2">
             <label for="exampleTextarea">SEO Sayfa Açıklaması</label>
           </div>
-          <div class="col-10">
+          <div class="col-md-10 col-12">
             <div class="form-group mb-1">
               <textarea
                 class="form-control"
                 id="exampleTextarea"
                 rows="3"
+                v-model="seoDescription"
               ></textarea>
             </div>
           </div>
@@ -82,6 +84,7 @@
       </div>
     </form>
     <button @click="customSubmit" class="btn btn-success mr-2">Ekle</button>
+    <button class="btn btn-danger" @click="getTags">gettags</button>
   </div>
 </template>
 
@@ -102,7 +105,6 @@ export default {
     return {
       title: "Blog ekranı component",
       meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: "description",
           name: "description",
@@ -114,30 +116,40 @@ export default {
 
   data() {
     return {
-      tagsContainer: ([] = []),
+      tagsContainer: ["ali", "veli", "mehmet"],
       downloadedImgURL: "",
+      title: "",
+      blogText: "",
+      seoDescription:""
     };
   },
 
   methods: {
     customSubmit(e) {
       e.preventDefault();
-      var uploadImageComponent = this.$refs.uploadImage;
-      uploadImageComponent.onUpload();
-    },
-    test() {
-      toastr.info("Are you the 6 fingered man?");
+      this.getTags(); //yazılan tagleri tagsContainer içinde tutuyor
     },
     getTags() {
       let self = this;
-      let listItems = $("#tags-input li");
+      self.tagsContainer = []
+      let listItems = $("#tags-input li.new-added");
+      let alreadyExisteds = $("#tags-input li.existed");
+      alreadyExisteds.each(function (idx, li){
+      let product = $(li);
+        self.tagsContainer.push($.trim(product.text()));
+      })
       listItems.each(function (idx, li) {
         let product = $(li);
         self.tagsContainer.push(product.text());
+        product.removeClass("new-added").addClass("existed")
       });
+
     },
     emitUrlfromComponent(data) {
       this.downloadedImgURL = data;
+    },
+    emitTextfromComponent(data){
+      this.blogText = data;
     },
     runTagger() {
       function existingTag(text) {
@@ -166,7 +178,7 @@ export default {
 
             if (!existingTag(tag)) {
               $(
-                '<li class="tags"><span>' +
+                '<li class="tags new-added"><span>' +
                   tag +
                   '</span><i class="fa fa-times"></i></i></li>'
               ).insertBefore($(".tags-new"));
@@ -185,7 +197,6 @@ export default {
   },
   mounted() {
     this.runTagger();
-    this.getTags();
   },
 };
 </script>

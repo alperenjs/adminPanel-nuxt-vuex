@@ -1,7 +1,8 @@
 {
-  "name": "adminPanel-nuxt-vuex",
+  "name": "adminpanel-nuxt-vuex",
   "version": "1.0.0",
   "private": true,
+
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

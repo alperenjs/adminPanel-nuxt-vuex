@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="picture" class="row">
-      <img :src="picture" style="height: 200px" />
+      <img :src="picture" class="uploaded-image-preview" />
     </div>
     <input
       class="form-control"
