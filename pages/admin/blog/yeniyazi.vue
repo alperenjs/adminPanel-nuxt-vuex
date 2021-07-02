@@ -1,9 +1,5 @@
 <template>
   <div class="card card-custom">
-    <h1>
-      downloaded image url geliyor, bunu veritabanına basıcaz
-      {{ downloadedImgURL }}
-    </h1>
     <div class="card-header">
       <h3 class="card-title">Yeni Yazı</h3>
     </div>
@@ -83,7 +79,7 @@
         </div>
       </div>
     </form>
-    <button @click="customSubmit" class="btn btn-success mr-2">Ekle</button>
+    <button @click="addPost" class="btn btn-success mr-2">Ekle</button>
     <button class="btn btn-danger" @click="getTags">gettags</button>
   </div>
 </template>
@@ -94,6 +90,7 @@ import $ from "jquery";
 import toastr from "~/static/plugins/global/toastr.min.js";
 import Texteditor from "@/components/Texteditor.vue";
 import UploadImage from "@/components/UploadImage.vue";
+import db from "~/plugins/firebaseInit.js";
 
 export default {
   components: {
@@ -125,10 +122,7 @@ export default {
   },
 
   methods: {
-    customSubmit(e) {
-      e.preventDefault();
-      this.getTags(); //yazılan tagleri tagsContainer içinde tutuyor
-    },
+  
     getTags() {
       let self = this;
       self.tagsContainer = []
@@ -193,6 +187,28 @@ export default {
           $(this).parent("li").remove();
         });
       });
+    },
+    addPost() {
+      this.getTags();
+      // Add a new document with a generated id.
+      db.collection("posts")
+        .add({
+          title: this.title,
+          blogText: this.blogText,
+          downloadedImgURL: this.downloadedImgURL,
+          seoDescription: this.seoDescription,
+          tagsContainer: this.tagsContainer,
+        })
+        .then(() => {
+          this.$router.go("/photosedit");
+        })
+        .then(toastr.success("Yazı başarıyla eklendi.", "Başarılı!"))
+        .catch((error) => {
+          toastr.warning(
+            "Sayfayı yenileyin, eğer devam ederse destek isteyin",
+            "Hata!"
+          );
+        });
     },
   },
   mounted() {
