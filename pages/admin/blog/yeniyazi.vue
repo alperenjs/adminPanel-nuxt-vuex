@@ -199,10 +199,10 @@ export default {
           seoDescription: this.seoDescription,
           tagsContainer: this.tagsContainer,
         })
-        .then(() => {
-          this.$router.go("/photosedit");
-        })
         .then(toastr.success("Yazı başarıyla eklendi.", "Başarılı!"))
+        .then(() => {
+          this.$router.replace("/admin/blog");
+        })
         .catch((error) => {
           toastr.warning(
             "Sayfayı yenileyin, eğer devam ederse destek isteyin",
