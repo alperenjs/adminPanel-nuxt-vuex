@@ -334,7 +334,6 @@ import $ from "jquery";
 import jQuery from "jquery";
 import bootstrap from 'bootstrap'
 
-
 export default {
   middleware: ["check-auth", "auth"],
   component: {
