@@ -391,11 +391,14 @@ export default {
           "rotate(180deg)"
         );
         $(".brand .brand-toggle .svg-icon svg g path").css("fill", "#3699FF");
+        $(".aside-fixed .wrapper").css("padding-left", "68px")
       } else {
         this.isSideClosed = false;
         this.width = "265px";
         $(".brand .brand-toggle .svg-icon svg").css("transform", "rotate(0)");
         $(".menu-text, .brand-logo, .menu-arrow").show();
+        $(".aside-fixed .wrapper").css("padding-left", "265px")
+
       }
     },
     toggleMobileSideMenu(event) {
