@@ -80,7 +80,6 @@
       </div>
     </form>
     <button @click="addPost" class="btn btn-success mr-2">Ekle</button>
-    <button class="btn btn-danger" @click="getTags">gettags</button>
   </div>
 </template>
 

@@ -364,6 +364,14 @@ export default {
       resizeWidth: 2100,
     };
   },
+  watch:{
+      $route() {
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+        if(vw <= 991)
+         this.toggleMobileSideMenu()
+        },
+    },
+
   computed: {
     computedWidth: function () {
       return this.width;
