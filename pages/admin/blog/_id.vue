@@ -29,8 +29,8 @@
         </div>
         <div class="form-group row">
           <label class="col-md-2 col-12 col-form-label">Kapak Resmi</label>
-          <img style="max-height:300px;" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
-          <button class="btn btn-danger delete-blog-cover-pic" style="display:none">Resim Kaldır</button>
+          <img v-show="downloadedImgURL != null" style="max-height:300px;" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
+          <button v-show="downloadedImgURL != null" @click="removeImage" class="btn btn-danger delete-blog-cover-pic" style="display:none">Resim Kaldır</button>
           <div class="col-md-10 col-12">
             <UploadImage
               @uploadImage="emitUrlfromComponent($event)"
@@ -70,6 +70,7 @@
                 <input type="text"/>
               </li>
             </ul>
+              <span class="form-text text-muted">İlgili etiketler, içeriğin Google tarafından öne çıkarılmasında yardımcı olur.</span>
           </div>
         </div>
       </div>
@@ -87,6 +88,7 @@
                 v-model="seoDescription"
               ></textarea>
             </div>
+              <span class="form-text text-muted">Google aramalarda, sayfa başlığının altında gözükecek olan bilgilendirici açıklama.</span>
           </div>
         </div>
       </div>
@@ -151,7 +153,10 @@ export default {
             $(".ql-editor").html(this.blogText)
         }).then(() => this.isPageLoaded = true);
     },
-    
+    removeImage(e){
+      e.preventDefault()
+      this.downloadedImgURL = null
+    },
     getTags() {
       let self = this;
       self.tagsContainer = []
