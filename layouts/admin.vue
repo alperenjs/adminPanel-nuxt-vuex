@@ -367,7 +367,7 @@ export default {
   watch:{
       $route() {
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-        if(this.isSideClosed = true){
+        if(vw <= 991 && this.isSideClosed){
           this.toggleMobileSideMenu()
         }
         },
