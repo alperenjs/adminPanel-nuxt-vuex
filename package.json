@@ -2,7 +2,6 @@
   "name": "adminpanel-nuxt-vuex",
   "version": "1.0.0",
   "private": true,
-
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -19,6 +18,7 @@
     "js-cookie": "^2.2.1",
     "nuxt": "^2.15.3",
     "popper.js": "^1.16.1",
+    "sweetalert2": "^11.0.18",
     "vue2-editor": "^2.10.2"
   },
   "devDependencies": {}
