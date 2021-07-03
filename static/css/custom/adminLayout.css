@@ -86,12 +86,15 @@
 .uploaded-image-preview{
   height: auto;
   width: 100%;
-  max-width: 400px;
+  max-width: 400px!important;
   object-fit: contain;
 }
 .datatables td {
   vertical-align: top!important;
   line-height: 16px; /* fallback */
+}
+.datatables tr td.blogText{
+  cursor: pointer;
 }
  th{
   font-family: 'Poppins', sans-serif!important;

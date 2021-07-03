@@ -16,12 +16,12 @@
         <tbody>
           <tr v-for="post in allPosts" :key="post.id">
             <td>{{allPosts.indexOf(post) + 1}}</td>
-            <td class="blogText">
+            <td @click="goToSinglePost(post.id)" class="blogText">
              {{post.title}}
             </td>
             <td>
               <span style="overflow: visible; position: relative">
-                <div class="dropdown dropdown-inline">
+                <div @click="zort" class="dropdown dropdown-inline">
                   <a
                     href="javascript:;"
                     class="btn btn-sm btn-clean btn-icon mr-2"
@@ -171,6 +171,7 @@ export default {
       downloadedImgURL: "",
       title: "",
       allPosts: [],
+      singlePost:[]
     };
   },
 
@@ -210,6 +211,13 @@ $("#example").DataTable({
         },
       },
     });
+    },
+    goToSinglePost(hangiID) {
+      const result = this.allPosts.find(({ id }) => id === hangiID);
+      this.$router.push('/admin/blog/' + hangiID)
+    },
+    zort(){
+      console.log("benim atölye var 15inde")
     }
   },
   mounted() {

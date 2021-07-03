@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import $ from "jquery"
 import toastr from "~/static/plugins/global/toastr.min.js";
 import firebase from "firebase/app";
 import "firebase/storage"; // <----
@@ -69,7 +70,7 @@ export default {
       db.collection("photos")
         .add({
           img_url: newimg,
-        })
+        }).then($(".current-blog-photo").hide())
         .then(toastr.success("Fotoğraf başarıyla eklendi.", "Başarılı!"))
         .catch((error) => {
           toastr.warning(
