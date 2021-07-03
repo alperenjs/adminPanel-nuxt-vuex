@@ -5,7 +5,9 @@
     </div>
     <!--begin::Form-->
     <div class="card-body">
-      <table id="example" class="display datatables" style="width: 100%">
+      <div v-if="!isPageLoaded" class = "spinner" style = "font-size: 18px">
+      </div>
+      <table v-show="isPageLoaded" id="example" class="display datatables" style="width: 100%">
         <thead>
           <tr>
             <th>Sıra</th>
@@ -168,6 +170,7 @@ export default {
 
   data() {
     return {
+      isPageLoaded: false,
       downloadedImgURL: "",
       title: "",
       allPosts: [],
@@ -189,6 +192,7 @@ export default {
             this.allPosts.push(data);
           });
         }).then(veri => {
+        this.isPageLoaded = true;
         this.createTable();
         });
     },

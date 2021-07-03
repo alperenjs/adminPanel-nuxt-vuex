@@ -1,3 +1,16 @@
+
+.spinner:before {
+  content: "";
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  border-radius: 50%;
+  border: 2px solid  #329cf5;
+  border-right: 2px solid transparent;
+}
+
 .menu-link {
   align-items: center !important;
 }
