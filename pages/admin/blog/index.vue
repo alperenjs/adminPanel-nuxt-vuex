@@ -10,7 +10,6 @@
           <tr>
             <th>Sıra</th>
             <th>Başlık</th>
-            <th>Durum</th>
             <th>İşlemler</th>
           </tr>
         </thead>
@@ -21,7 +20,6 @@
               Cep ifi paylaşanlarap telefonundan wifi paylaşanlara kötü haber!
               Cep telefonundan wifi paylaşanlara kötü haber! Architect
             </td>
-            <td>Edinburgh</td>
             <td>
               <span style="overflow: visible; position: relative">
                 <div class="dropdown dropdown-inline">
@@ -54,64 +52,6 @@
                       </svg>
                     </span>
                   </a>
-                  <div
-                    class="dropdown-menu dropdown-menu-sm dropdown-menu-right"
-                  >
-                    <ul class="navi flex-column navi-hover py-2">
-                      <li
-                        class="
-                          navi-header
-                          font-weight-bolder
-                          text-uppercase
-                          font-size-xs
-                          text-primary
-                          pb-2
-                        "
-                      >
-                        Choose an action:
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-print"></i
-                          ></span>
-                          <span class="navi-text">Print</span>
-                        </a>
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-copy"></i
-                          ></span>
-                          <span class="navi-text">Copy</span>
-                        </a>
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-file-excel-o"></i
-                          ></span>
-                          <span class="navi-text">Excel</span>
-                        </a>
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-file-text-o"></i
-                          ></span>
-                          <span class="navi-text">CSV</span>
-                        </a>
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-file-pdf-o"></i
-                          ></span>
-                          <span class="navi-text">PDF</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
                 <a
                   href="javascript:;"
@@ -194,7 +134,6 @@
           <tr>
             <td>2</td>
             <td>Customer Support</td>
-            <td>New York</td>
             <td>
               <span style="overflow: visible; position: relative">
                 <div class="dropdown dropdown-inline">
@@ -227,64 +166,6 @@
                       </svg>
                     </span>
                   </a>
-                  <div
-                    class="dropdown-menu dropdown-menu-sm dropdown-menu-right"
-                  >
-                    <ul class="navi flex-column navi-hover py-2">
-                      <li
-                        class="
-                          navi-header
-                          font-weight-bolder
-                          text-uppercase
-                          font-size-xs
-                          text-primary
-                          pb-2
-                        "
-                      >
-                        Choose an action:
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-print"></i
-                          ></span>
-                          <span class="navi-text">Print</span>
-                        </a>
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-copy"></i
-                          ></span>
-                          <span class="navi-text">Copy</span>
-                        </a>
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-file-excel-o"></i
-                          ></span>
-                          <span class="navi-text">Excel</span>
-                        </a>
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-file-text-o"></i
-                          ></span>
-                          <span class="navi-text">CSV</span>
-                        </a>
-                      </li>
-                      <li class="navi-item">
-                        <a href="#" class="navi-link">
-                          <span class="navi-icon"
-                            ><i class="la la-file-pdf-o"></i
-                          ></span>
-                          <span class="navi-text">PDF</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
                 <a
                   href="javascript:;"
@@ -369,7 +250,6 @@
           <tr>
             <th>Sıra</th>
             <th>Başlık</th>
-            <th>Durum</th>
             <th>İşlemler</th>
           </tr>
         </tfoot>
