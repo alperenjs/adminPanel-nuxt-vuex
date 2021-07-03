@@ -1,9 +1,19 @@
 <template>
-  <div class="card card-custom">
+<div>
+  <div v-if="!isPageLoaded"  class="loading">
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
+
+  <div  v-show="isPageLoaded" class="card card-custom">
     <div class="card-header">
       <h3 class="card-title">Yeni Yazı</h3>
     </div>
     <!--begin::Form-->
+     
+      <div>
     <form>
       <div class="card-body">
         <div class="form-group mb-8">
@@ -19,7 +29,7 @@
         </div>
         <div class="form-group row">
           <label class="col-md-2 col-12 col-form-label">Kapak Resmi</label>
-          <img style="max-width:300px;" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
+          <img style="max-height:300px;" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
           <button class="btn btn-danger delete-blog-cover-pic" style="display:none">Resim Kaldır</button>
           <div class="col-md-10 col-12">
             <UploadImage
@@ -82,6 +92,8 @@
       </div>
     </form>
     <button @click="updatePost(blogID)" class="btn btn-success mr-2">Güncelle</button>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -114,6 +126,7 @@ export default {
 
   data() {
     return {
+      isPageLoaded: false,
       blogId: "",
       tagsContainer: ["ali", "veli", "mehmet"],
       downloadedImgURL: "",
@@ -136,7 +149,7 @@ export default {
             this.downloadedImgURL = veri.downloadedImgURL;
             this.blogText = veri.blogText;
             $(".ql-editor").html(this.blogText)
-        });
+        }).then(() => this.isPageLoaded = true);
     },
     
     getTags() {

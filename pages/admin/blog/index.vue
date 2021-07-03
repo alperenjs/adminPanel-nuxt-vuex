@@ -1,13 +1,20 @@
 <template>
-  <div class="card card-custom">
+<div>
+  <div v-if="!isPageLoaded"  class="loading">
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
+
+  <div  v-show="isPageLoaded" class="card card-custom">
     <div class="card-header">
       <h3 class="card-title">Blog Yazıları</h3>
     </div>
     <!--begin::Form-->
     <div class="card-body">
-      <div v-if="!isPageLoaded" class = "spinner" style = "font-size: 18px">
-      </div>
-      <table v-show="isPageLoaded" id="example" class="display datatables" style="width: 100%">
+     
+      <table id="example" class="display datatables" style="width: 100%">
         <thead>
           <tr>
             <th>Sıra</th>
@@ -142,6 +149,7 @@
         </tfoot>
       </table>
     </div>
+  </div>
   </div>
 </template>
 
