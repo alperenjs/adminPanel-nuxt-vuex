@@ -359,7 +359,7 @@ export default {
   },
   data() {
     return {
-      isSideClosed: false,
+      isSideClosed: Boolean,
       width: "265px",
       resizeWidth: 2100,
     };
@@ -367,8 +367,9 @@ export default {
   watch:{
       $route() {
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-        if(vw <= 991)
-         this.toggleMobileSideMenu()
+        if(this.isSideClosed = true){
+          this.toggleMobileSideMenu()
+        }
         },
     },
 
@@ -441,6 +442,13 @@ export default {
   created() {
     window.addEventListener("resize", this.resizeCalc);
   },
+  mounted(){
+     if (this.resizeWidth > 991) {
+        this.isSideClosed = false;
+      }else{
+        this.isSideClosed = true;
+      }
+  }
 };
 </script>
 

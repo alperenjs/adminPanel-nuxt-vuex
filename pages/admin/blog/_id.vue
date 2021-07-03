@@ -29,7 +29,7 @@
         </div>
         <div class="form-group row">
           <label class="col-md-2 col-12 col-form-label">Kapak Resmi</label>
-          <img v-show="downloadedImgURL != null" style="max-height:300px;" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
+          <img v-show="downloadedImgURL != null" style="max-height:300px; max-width:300px" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
           <button v-show="downloadedImgURL != null" @click="removeImage" class="btn btn-danger delete-blog-cover-pic" style="display:none">Resim Kaldır</button>
           <div class="col-md-10 col-12">
             <UploadImage
