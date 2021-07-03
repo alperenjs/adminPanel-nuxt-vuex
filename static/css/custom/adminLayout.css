@@ -70,6 +70,53 @@
 
 /*#endregion 0*/
 
+/*#region galeri modal */
+.gallery-modal-body{
+  max-height: 400px;
+  overflow-y: scroll;
+  scrollbar-color: #E0EDF5 transparent;
+  scrollbar-width: thin !important;
+}
+
+.gallery-modal-body .single-image-col{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin: 5px;
+  opacity: .7;
+  transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.gallery-modal-body .single-image-col:hover{
+  opacity: 1;
+}
+.gallery-modal-body .single-image-col.active {
+  opacity: 1;
+}
+.gallery-modal-body .single-image-col.active img{
+  outline: 5px solid orangered;
+  outline-offset: -5px;
+}
+.gallery-modal-body::-webkit-scrollbar {
+  width: 1.5rem;
+  height: 150px;
+  background: transparent;
+  border-radius: 18px;
+  margin-left: -20px;
+}
+.gallery-modal-body::-webkit-scrollbar-thumb {
+  width: 6px;
+  height: 150px;
+  border: 0.5em solid transparent;
+  background-clip: padding-box;
+ border-radius: 1em;
+  -webkit-border-radius: 1em;
+  background-color: #E0EDF5;
+  -webkit-box-shadow: inset 0 0 0 1px #e0edf5;
+ box-shadow: inset 0 0 0 1px #e0edf5;
+  cursor: pointer;
+}
+/*#endregion */
+
 .menu-link {
   align-items: center !important;
 }

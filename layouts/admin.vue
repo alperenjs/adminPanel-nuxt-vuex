@@ -221,11 +221,44 @@
                     </ul>
                   </div>
                 </li>
+                 <li
+                  @click="menuSubMenu"
+                  class="menu-item menu-item-submenu"
+                  aria-haspopup="true"
+                  data-menu-toggle="hover"
+                >
+                  <a href="javascript:;" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon-photo-camera"></i>
+                    <span class="menu-text">Galeri</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+                  <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/galeri" class="menu-link">
+                          <i class="mr-2 menu-bullet flaticon2-photograph">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Resimler</span>
+                        </nuxt-link>
+                      </li>
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/galeri/yeniresim" class="menu-link">
+                          <i class="mr-2 menu-bullet fas fa-plus">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Yeni Resim Ekle</span>
+                        </nuxt-link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
 
                 <li class="menu-item" aria-haspopup="true">
                   <nuxt-link to="/admin/blog" class="menu-link">
                     <i class="menu-icon flaticon-upload-1"></i>
-                    <span class="menu-text">Image Upload</span>
+                    <span class="menu-text">Tekli link</span>
                   </nuxt-link>
                 </li>
                 <li
