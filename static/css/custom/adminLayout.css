@@ -89,5 +89,74 @@
   max-width: 400px;
   object-fit: contain;
 }
+.datatables td {
+  vertical-align: top!important;
+  line-height: 16px; /* fallback */
+}
+ th{
+  font-family: 'Poppins', sans-serif!important;
+  color: #B5B5C3!important;
+  transform: .4s ease all;
+}
+th:hover{
+  color: #8d8d8d!important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+  color: #333 !important;
+    border: 1px solid #979797;
+    border-radius: 8px;
+    background-color: white;
+  background: none!important;
+  }
+#example_filter{
+  float: left;
+  color: #333;
+  border: 1px solid #aaa9;
+    border-radius: 15px;
+    padding: 0px 10px;
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+    transform: .3s ease all;
+}
+#example_filter:focus-within{
+  border: 1px solid rgba(11, 169, 255, 0.6);
+}
+.dataTables_wrapper .dataTables_length{
+  float: right!important;
+}
+.dataTables_wrapper .dataTables_length select {
+  cursor: pointer;
+  border: 1px solid #aaa9;
+  border-radius: 9px;
+  padding: 5px;
+  background-color: transparent;
+  padding: 4px;
+}
+#example_filter label{
+  margin-bottom: 0;
+  margin: 3px 0;
+}
+.dataTables_wrapper .dataTables_filter input{
+  cursor: pointer;
+  border: none!important;
+}
+.dataTables_wrapper .dataTables_filter input:focus{
+  border: none;
+  outline: none;
+}
+ .btn.btn-delete:hover  .svg-icon svg g [fill]{
+   fill: orangered!important;
+ }
+td.blogText{
+  word-break: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px; /* fallback */
+   max-height: 32px; /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
 
 /*#endregion tagger */
