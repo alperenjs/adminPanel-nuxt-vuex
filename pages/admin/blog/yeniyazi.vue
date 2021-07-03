@@ -58,6 +58,7 @@
                 <input type="text"/>
               </li>
             </ul>
+              <span class="form-text text-muted">İlgili etiketler, içeriğin Google tarafından öne çıkarılmasında yardımcı olur.</span>
           </div>
         </div>
       </div>
@@ -75,6 +76,7 @@
                 v-model="seoDescription"
               ></textarea>
             </div>
+              <span class="form-text text-muted">Google aramalarda, sayfa başlığının altında gözükecek olan bilgilendirici açıklama.</span>
           </div>
         </div>
       </div>
@@ -112,7 +114,7 @@ export default {
 
   data() {
     return {
-      tagsContainer: ["ali", "veli", "mehmet"],
+      tagsContainer: ["virgül koyarak", "etiket ekleyiniz"],
       downloadedImgURL: "",
       title: "",
       blogText: "",
