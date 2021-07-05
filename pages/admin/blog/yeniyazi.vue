@@ -17,9 +17,24 @@
             </div>
           </div>
         </div>
-        <div class="form-group row">
+            <div class="form-group row">
           <label class="col-md-2 col-12 col-form-label">Kapak Resmi</label>
-          <div class="col-md-10 col-12">
+          <div class="col-md-3 col-12">
+          <img v-show="downloadedImgURL != null" style="max-height:300px; max-width:300px" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
+          <button v-show="downloadedImgURL != null" @click="removeImage" class="btn btn-danger delete-blog-cover-pic" style="display:none">Resim Kaldır</button>
+        </div>
+      </div>
+       <div class="form-group row">
+            <div class="col-md-2"></div>
+                      <div class="col-md-5 col-6">
+              <span class="form-text text-muted">Daha önce yüklediğiniz resimlerden seçin.</span>
+            <ImageGallery
+            @selectImage="emitSelectedImageFromGallery($event)"
+           ref="selectImage"
+            />
+          </div>
+          <div class="col-md-5 col-6">
+              <span class="form-text text-muted">Bilgisayarınızdan yeni resim yükleyin.</span>
             <UploadImage
               @uploadImage="emitUrlfromComponent($event)"
               ref="uploadImage"
@@ -115,7 +130,7 @@ export default {
   data() {
     return {
       tagsContainer: ["virgül koyarak", "etiket ekleyiniz"],
-      downloadedImgURL: "",
+      downloadedImgURL: null,
       title: "",
       blogText: "",
       seoDescription:""
@@ -210,6 +225,13 @@ export default {
             "Hata!"
           );
         });
+    },
+     removeImage(e){
+      e.preventDefault()
+      this.downloadedImgURL = null
+    },
+      emitSelectedImageFromGallery(data) {
+      this.downloadedImgURL = data;
     },
   },
   mounted() {
