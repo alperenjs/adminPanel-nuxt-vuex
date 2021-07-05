@@ -29,9 +29,22 @@
         </div>
         <div class="form-group row">
           <label class="col-md-2 col-12 col-form-label">Kapak Resmi</label>
+          <div class="col-md-3 col-12">
           <img v-show="downloadedImgURL != null" style="max-height:300px; max-width:300px" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
           <button v-show="downloadedImgURL != null" @click="removeImage" class="btn btn-danger delete-blog-cover-pic" style="display:none">Resim Kaldır</button>
-          <div class="col-md-10 col-12">
+    </div>
+      </div>
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+                      <div class="col-md-5 col-6">
+              <span class="form-text text-muted">Daha önce yüklediğiniz resimlerden seçin.</span>
+            <ImageGallery
+            @selectImage="emitSelectedImageFromGallery($event)"
+           ref="selectImage"
+            />
+          </div>
+          <div class="col-md-5 col-6">
+              <span class="form-text text-muted">Bilgisayarınızdan yeni resim yükleyin.</span>
             <UploadImage
               @uploadImage="emitUrlfromComponent($event)"
               ref="uploadImage"
@@ -106,11 +119,13 @@ import toastr from "~/static/plugins/global/toastr.min.js";
 import db from "~/plugins/firebaseInit.js";
 import Texteditor from "@/components/Texteditor.vue";
 import UploadImage from "@/components/UploadImage.vue";
+import ImageGallery from "@/components/ImageGallery.vue";
 
 export default {
   components: {
     Texteditor,
     UploadImage,
+    ImageGallery
   },
   layout: "admin",
   head() {
@@ -134,7 +149,8 @@ export default {
       downloadedImgURL: "",
       title: "",
       blogText: "",
-      seoDescription:""
+      seoDescription:"",
+      selectedImg:""
     };
   },
 
@@ -175,7 +191,10 @@ export default {
     },
 
     emitUrlfromComponent(data) {
-      this.downloadedImgURL = data;
+      this.downloadedImgURL = null;
+      setTimeout(() => {
+        this.downloadedImgURL = data;
+      }, 500);
     },
 
     emitTextfromComponent(data){
@@ -248,7 +267,10 @@ export default {
         if($(".current-blog-photo")){
             $(".delete-blog-cover-pic").show()
         }
-    }
+    },
+      emitSelectedImageFromGallery(data) {
+      this.downloadedImgURL = data;
+    },
   },
   created(){
      this.blogID = location.pathname.split("/")[3];

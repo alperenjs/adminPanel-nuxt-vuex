@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <div v-if="picture" class="row">
+  <div style="position:relative;">
+    <!-- <div v-if="picture" class="row">
       <img :src="picture" class="uploaded-image-preview" />
-    </div>
+    </div> -->
+    <label for="upload-photo">Cihazımdan Seç</label>
     <input
-      class="form-control"
+    id="upload-photo"
+      class="form-control btn  btn-success"
       @change="previewImage"
       type="file"
       accept="image/*"
     />
-    <p v-show="loading">Progress: {{ uploadValue.toFixed() + "%" }}</p>
+    <p v-show="loading">İşleniyor: {{ uploadValue.toFixed() + "%" }}</p>
 
     <button v-if="imageData && !loading" @click="onUpload">Yükle</button>
   </div>
@@ -86,3 +88,11 @@ export default {
 };
 </script>
 
+<style scoped>
+#upload-photo {
+  opacity: 0;
+cursor: pointer;
+  position: absolute;
+  z-index: -1;
+}
+</style>
