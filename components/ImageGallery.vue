@@ -16,7 +16,7 @@
         <div class="modal-body gallery-modal-body">
            <div class="row">
                <div @click="selectImg($event)" v-for="photo in photos" :key="photo.key" class="col single-image-col">
-                   <img style="max-width:200px; max-height:200px;"  :src="photo.img_url" alt="galeri foto">
+                   <img style="max-width:200px; max-height:200px;"  :src="photo.img_url" alt="galeri fotoğrafı">
                </div>
            </div>
         </div>

@@ -32,6 +32,7 @@ export default {
       picture: null,
       imageData: null,
       loading: false,
+      size:""
     };
   },
   methods: {
@@ -39,14 +40,16 @@ export default {
       this.uploadValue = 0;
       this.picture = null;
       this.imageData = event.target.files[0];
+      this.size = event.target.files[0].size / 1000 + " kb";
       this.onUpload();
     },
     onUpload() {
+      let dateID = Date.now();
       this.loading = true;
       this.picture = null;
       const storageRef = firebase
         .storage()
-        .ref(`${this.imageData.name}`)
+        .ref(`${dateID}${this.imageData.name}`)
         .put(this.imageData);
       storageRef.on(
         `stage_changed`,
@@ -72,6 +75,7 @@ export default {
       db.collection("photos")
         .add({
           img_url: newimg,
+          size: this.size
         }).then($(".current-blog-photo").hide())
         .then(toastr.success("Fotoğraf başarıyla eklendi.", "Başarılı!"))
         .catch((error) => {

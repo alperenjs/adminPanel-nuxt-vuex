@@ -32,7 +32,7 @@
           <div class="col-md-3 col-12">
           <img v-show="downloadedImgURL != null" style="max-height:300px; max-width:300px" class="current-blog-photo" :src="downloadedImgURL" alt="Blog Kapak Fotoğrafı">
           <button v-show="downloadedImgURL != null" @click="removeImage" class="btn btn-danger delete-blog-cover-pic" style="display:none">Resim Kaldır</button>
-    </div>
+        </div>
       </div>
           <div class="form-group row">
             <div class="col-md-2"></div>
@@ -106,7 +106,7 @@
         </div>
       </div>
     </form>
-    <button @click="updatePost(blogID)" class="btn btn-success mr-2">Güncelle</button>
+    <button @click="updatePost(blogID)" class="btn btn-success mr-2 w-100">Güncelle</button>
     </div>
   </div>
   </div>
@@ -150,7 +150,6 @@ export default {
       title: "",
       blogText: "",
       seoDescription:"",
-      selectedImg:""
     };
   },
 
