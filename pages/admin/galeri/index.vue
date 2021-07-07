@@ -4,9 +4,11 @@
   <div class="px-lg-5">
 
     <!-- For demo purpose -->
+    <div class="upload-image-row row py-5">
+        <span class="upload-image-text mx-5">Yeni Resim: </span>
+        <UploadImage />
+    </div>
     <div class="row py-5">
-         <UploadImage
-            />
       <div class="col-lg-12 mx-auto">
              <div class="alert alert-custom alert-default" role="alert">
             <div class="alert-icon">
@@ -51,6 +53,7 @@ export default {
   components: {
     UploadImage
   },
+  
   layout: "admin",
   head() {
     return {
@@ -67,7 +70,7 @@ export default {
 
   data() {
     return {
-      photos:[]
+      photos:[],
     };
   },
 
@@ -94,6 +97,11 @@ export default {
 </script>
 
 <style scoped>
+.upload-image-row{
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
 .display-4{
   color: black;
 }

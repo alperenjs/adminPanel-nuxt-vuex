@@ -3,7 +3,7 @@
     <!-- <div v-if="picture" class="row">
       <img :src="picture" class="uploaded-image-preview" />
     </div> -->
-    <label for="upload-photo">Cihazımdan Seç</label>
+    <label class="btn btn-success" for="upload-photo">{{btnText || "Cihazımdan Seç"}}</label>
     <input
     id="upload-photo"
       class="form-control btn  btn-success"
@@ -26,6 +26,7 @@ import db from "~/plugins/firebaseInit.js";
 
 export default {
   name: "UploadImage",
+  props: ['btnText'],
   data() {
     return {
       uploadValue: 0,

@@ -35,7 +35,7 @@
           </div>
           <div class="col-md-5 col-6">
               <span class="form-text text-muted">Bilgisayarınızdan yeni resim yükleyin.</span>
-            <UploadImage
+            <UploadImage 
               @uploadImage="emitUrlfromComponent($event)"
               ref="uploadImage"
             />
