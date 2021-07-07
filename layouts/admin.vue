@@ -243,14 +243,6 @@
                           <span class="menu-text">Resimler</span>
                         </nuxt-link>
                       </li>
-                      <li class="menu-item" aria-haspopup="true">
-                        <nuxt-link to="/admin/galeri/yeniresim" class="menu-link">
-                          <i class="mr-2 menu-bullet fas fa-plus">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Yeni Resim Ekle</span>
-                        </nuxt-link>
-                      </li>
                     </ul>
                   </div>
                 </li>
