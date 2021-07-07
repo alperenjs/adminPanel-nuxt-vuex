@@ -245,6 +245,7 @@ export default {
     },
 
     updatePost(hangiID) {
+      this.getTags()
       db.collection("posts")
         .doc(`${hangiID}`)
         .update({
