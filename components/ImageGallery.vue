@@ -14,6 +14,9 @@
             <button type="button" class="btn btn-outline-danger btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
         </div>
         <div class="modal-body gallery-modal-body">
+          <div v-if="!photos.length">
+            <p class="text center">Henüz veri tabanına yüklediğiniz resim bulunmamaktadır.</p>
+          </div>
            <div class="row">
                <div @click="selectImg($event)" v-for="photo in photos" :key="photo.key" class="col single-image-col">
                    <img style="max-width:200px; max-height:200px;"  :src="photo.img_url" alt="galeri fotoğrafı">
@@ -22,7 +25,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
-            <button @click="selectImageButton" type="button" class="btn btn-primary">Seçileni Al</button>
+            <button  @click="selectImageButton" type="button" class="btn btn-primary">Seçileni Al</button>
         </div>
         </div>
     </div>
