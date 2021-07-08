@@ -221,7 +221,7 @@
                     </ul>
                   </div>
                 </li>
-                 <li
+                <li
                   @click="menuSubMenu"
                   class="menu-item menu-item-submenu"
                   aria-haspopup="true"
@@ -246,7 +246,43 @@
                     </ul>
                   </div>
                 </li>
-
+                <li class="menu-section">
+                  <h4 class="menu-text">Site Ayarları</h4>
+                  <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+                </li>
+                <li
+                  @click="menuSubMenu"
+                  class="menu-item menu-item-submenu"
+                  aria-haspopup="true"
+                  data-menu-toggle="hover"
+                >
+                  <a href="javascript:;" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon-settings"></i>
+                    <span class="menu-text">Site Yönetimi</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+                  <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/site" class="menu-link">
+                          <i class="mr-2 menu-bullet flaticon2-crisp-icons">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Site Ayarları</span>
+                        </nuxt-link>
+                      </li>
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/galeri" class="menu-link">
+                          <i class="mr-2 menu-bullet flaticon-user">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Yönetici Listesi</span>
+                        </nuxt-link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
                 <li class="menu-item" aria-haspopup="true">
                   <nuxt-link to="/admin/blog" class="menu-link">
                     <i class="menu-icon flaticon-upload-1"></i>
@@ -357,7 +393,7 @@
 <script>
 import $ from "jquery";
 import jQuery from "jquery";
-import bootstrap from 'bootstrap'
+import bootstrap from "bootstrap";
 
 export default {
   middleware: ["check-auth", "auth"],
@@ -389,14 +425,17 @@ export default {
       resizeWidth: 2100,
     };
   },
-  watch:{
-      $route() {
-        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-        if(vw <= 991 && this.isSideClosed){
-          this.toggleMobileSideMenu()
-        }
-        },
+  watch: {
+    $route() {
+      const vw = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      );
+      if (vw <= 991 && this.isSideClosed) {
+        this.toggleMobileSideMenu();
+      }
     },
+  },
 
   computed: {
     computedWidth: function () {
@@ -424,14 +463,13 @@ export default {
           "rotate(180deg)"
         );
         $(".brand .brand-toggle .svg-icon svg g path").css("fill", "#3699FF");
-        $(".aside-fixed .wrapper").css("padding-left", "68px")
+        $(".aside-fixed .wrapper").css("padding-left", "68px");
       } else {
         this.isSideClosed = false;
         this.width = "265px";
         $(".brand .brand-toggle .svg-icon svg").css("transform", "rotate(0)");
         $(".menu-text, .brand-logo, .menu-arrow").show();
-        $(".aside-fixed .wrapper").css("padding-left", "265px")
-
+        $(".aside-fixed .wrapper").css("padding-left", "265px");
       }
     },
     toggleMobileSideMenu(event) {
@@ -467,13 +505,13 @@ export default {
   created() {
     window.addEventListener("resize", this.resizeCalc);
   },
-  mounted(){
-     if (this.resizeWidth > 991) {
-        this.isSideClosed = false;
-      }else{
-        this.isSideClosed = true;
-      }
-  }
+  mounted() {
+    if (this.resizeWidth > 991) {
+      this.isSideClosed = false;
+    } else {
+      this.isSideClosed = true;
+    }
+  },
 };
 </script>
 
