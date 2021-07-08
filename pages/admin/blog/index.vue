@@ -177,6 +177,7 @@ export default {
     },
     createTable(){
 $("#example").DataTable({
+       order: [[ 0, "desc" ]],
       responsive: true,
       pagingType: "full_numbers",
       language: {
