@@ -408,7 +408,12 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "My custom description",
+          content: "admin description alperen",
+        },
+             {
+          hid: "keywords",
+          name: "keywords",
+         content: "admin layout keywords, keywords, alperen sözen"
         },
       ],
       bodyAttrs: {

@@ -142,6 +142,11 @@ export default {
           name: "description",
           content: "Alperen Sözen",
         },
+            {
+          hid: "keywords",
+          name: "keywords",
+          content: "bak, degisti, batuhan",
+        },
       ],
     };
   },
