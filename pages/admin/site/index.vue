@@ -1,5 +1,7 @@
 <template>
-  <div class="card card-custom">
+<div>
+    <Loader v-if="!isPageLoaded" />
+    <div v-show="isPageLoaded"  class="card card-custom">
     <div class="card-header">
       <h3 class="card-title">Site Ayarları</h3>
     </div>
@@ -259,14 +261,18 @@ Copyright © 2021. Her Hakkı Saklıdır. Sitemizin herhangi bir şekilde kopyal
       </div>
     </div>
   </div>
+</div>
+  
 </template>
 
 
 <script>
 import $ from "jquery";
+import Swal from "sweetalert2";
 import toastr from "~/static/plugins/global/toastr.min.js";
 import UploadImage from "@/components/UploadImage.vue";
 import db from "~/plugins/firebaseInit.js";
+import Loader from '@/components/Loader.vue'
 
 export default {
   layout: "admin",
@@ -284,9 +290,11 @@ export default {
   },
   components: {
     UploadImage,
+    Loader
   },
   data() {
     return {
+      isPageLoaded: false,
       downloadedImgURL: null,
       pageTitle: "",
       siteLink: "",
@@ -394,6 +402,15 @@ export default {
             this.urlYoutube = doc.data().urlYoutube;
             this.urlTiktok = doc.data().urlTiktok;
             this.urlPinterest = doc.data().urlPinterest;
+            this.isPageLoaded = true;
+          }else{
+            this.isPageLoaded = true;
+             Swal.fire({
+        title: "Beklenmedik Bir Hata Oluştu!",
+        text: 'Verilerinizi çekemedik, sayfayı yenileyiniz veya yetkili kişiye başvurunuz.',
+        showDenyButton: true,
+        denyButtonText: `Vazgeç`,
+      })
           }
         })
         .catch((error) => {
