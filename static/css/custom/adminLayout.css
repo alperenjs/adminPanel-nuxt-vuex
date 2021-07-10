@@ -1,3 +1,33 @@
+/* side menu overflow addition */
+.aside-menu .menu-nav {
+  max-height: 85vh;
+  overflow-y: auto;
+}
+/*! Firefox */    
+.aside-menu .menu-nav{
+  scrollbar-color: transparent #176dc4;
+}
+
+/*! Other Browser */
+.aside-menu .menu-nav {
+  --scrollbarBG: transparent;
+  --thumbBG: #176dc4;
+}
+.aside-menu .menu-nav::-webkit-scrollbar {
+  width: 5px;
+}
+.aside-menu .menu-nav {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+.aside-menu .menu-nav::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.aside-menu .menu-nav::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
 
 /*#region loader loading */
 .loading {
