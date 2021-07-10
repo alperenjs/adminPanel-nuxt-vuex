@@ -41,7 +41,8 @@ export default {
       this.uploadValue = 0;
       this.picture = null;
       this.imageData = event.target.files[0];
-      this.size = event.target.files[0].size / 1000 + " kb";
+      this.size = (event.target.files[0].size / 1000).toFixed(0) + " kb";
+      alert(this.size)
       this.onUpload();
     },
     onUpload() {
