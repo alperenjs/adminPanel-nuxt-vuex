@@ -6,11 +6,8 @@
       <br />
       <label for="password">password</label>
       <input v-model="password" id="password" type="password" />
-      <button type="submit">{{ isLogin ? "Login" : "Kayıt Ol" }}</button>
+      <button type="submit">{{ isLogin ? "Giriş Yap" : "Giriş Yap" }}</button>
     </form>
-    <button @click="isLogin = !isLogin">
-      Switch to {{ isLogin ? "Kayıt Ol" : "Giriş Yap" }}
-    </button>
   </div>
 </template>
 
