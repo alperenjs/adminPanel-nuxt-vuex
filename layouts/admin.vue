@@ -7,9 +7,9 @@
       class="header-mobile align-items-center header-mobile-fixed"
     >
       <!--begin::Logo-->
-      <a href="/">
+      <nuxt-link to="/admin">
         <img alt="Logo" src="/images/logo.png" />
-      </a>
+      </nuxt-link>
       <!--end::Logo-->
       <!--begin::Toolbar-->
       <div class="d-flex align-items-center">
@@ -38,9 +38,9 @@
           <!--begin::Brand-->
           <div class="brand flex-column-auto" id="kt_brand">
             <!--begin::Logo-->
-            <a href="/" class="brand-logo">
+            <nuxt-link to="/admin" class="brand-logo">
               <img alt="Logo" src="/images/logo.png" />
-            </a>
+            </nuxt-link>
             <!--end::Logo-->
             <!--begin::Toggle-->
             <button
@@ -216,6 +216,47 @@
                             <span></span>
                           </i>
                           <span class="menu-text">Yeni Yazı Ekle</span>
+                        </nuxt-link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                 <li
+                  @click="menuSubMenu"
+                  class="menu-item menu-item-submenu"
+                  aria-haspopup="true"
+                  data-menu-toggle="hover"
+                >
+                  <a href="javascript:;" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon-layers"></i>
+                    <span class="menu-text">Sayfa Yönetimi</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+                  <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/blog" class="menu-link">
+                          <i class="mr-2 menu-bullet">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Ana Sayfa</span>
+                        </nuxt-link>
+                      </li>
+                      <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/blog/yeniyazi" class="menu-link">
+                          <i class="mr-2 menu-bullet">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Hakkımızda</span>
+                        </nuxt-link>
+                      </li>
+                           <li class="menu-item" aria-haspopup="true">
+                        <nuxt-link to="/admin/blog/yeniyazi" class="menu-link">
+                          <i class="mr-2 menu-bullet">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">İletişim</span>
                         </nuxt-link>
                       </li>
                     </ul>
