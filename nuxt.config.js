@@ -12,46 +12,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"},
       { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;800&display=swap"},
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/plugins/global/plugins.bundle.css",
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/css/style.bundle.min.css",
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/css/themes/layout/header/base/dark.css",
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/css/themes/layout/header/menu/dark.css",
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/css/themes/layout/brand/dark.css",
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/css/themes/layout/aside/dark.css",
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/css/custom/adminLayout.css",
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/plugins/global/toastr.min.css",
-      }
+
+    
     ],
    
   },

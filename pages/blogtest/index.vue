@@ -21,18 +21,18 @@ export default {
   layout: "default",
   head() {
     return {
-      title: "Alperen Sözen - Frontend Developer",
+      title: "Alperen Sözen - Blog Sayfası",
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
          {
           hid: "description",
           name: "description",
-          content: "Bir frontend developer olarak vuejs kullanan alperen, bu sayfanın google'a indexlenip indexlenmediğini kontrol etmek için bu çalışmayı yapmıştır.",
+          content: "Blog sayfası test, Bir frontend developer olarak vuejs kullanan alperen, bu sayfanın google'a indexlenip indexlenmediğini kontrol etmek için bu çalışmayı yapmıştır.",
         },
              {
           hid: "tags",
           name: "tags",
-          content: "alperen sözen, alperen, website yapımı, website, internet sitesi, blog, javascript, developer, yazılımcı",
+          content: "Blog, alperen sözen, alperen, website yapımı, website, internet sitesi, blog, javascript, developer, yazılımcı",
         },
       ],
     };

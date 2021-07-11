@@ -272,85 +272,6 @@
                           <span class="menu-text">Site Ayarları</span>
                         </nuxt-link>
                       </li>
-                      <li class="menu-item" aria-haspopup="true">
-                        <nuxt-link to="/admin/galeri" class="menu-link">
-                          <i class="mr-2 menu-bullet flaticon-user">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Yönetici Listesi</span>
-                        </nuxt-link>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="menu-item" aria-haspopup="true">
-                  <nuxt-link to="/admin/blog" class="menu-link">
-                    <i class="menu-icon flaticon-upload-1"></i>
-                    <span class="menu-text">Tekli link</span>
-                  </nuxt-link>
-                </li>
-                <li
-                  @click="menuSubMenu"
-                  class="menu-item menu-item-submenu"
-                  aria-haspopup="true"
-                  data-menu-toggle="hover"
-                >
-                  <a href="javascript:;" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon-web"></i>
-                    <span class="menu-text">3 lü</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="menu-submenu">
-                    <i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                      <li class="menu-item" aria-haspopup="true">
-                        <nuxt-link to="/admin/blog" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Blog Yazılarım</span>
-                        </nuxt-link>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="menu-section">
-                  <h4 class="menu-text">Kısım</h4>
-                  <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
-                </li>
-                <li
-                  @click="menuSubMenu"
-                  class="menu-item menu-item-submenu"
-                  aria-haspopup="true"
-                  data-menu-toggle="hover"
-                >
-                  <a href="javascript:;" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon-graphic"></i>
-                    <span class="menu-text">Themes</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="menu-submenu">
-                    <i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                      <li
-                        class="menu-item menu-item-parent"
-                        aria-haspopup="true"
-                      >
-                        <span class="menu-link">
-                          <span class="menu-text">Themes</span>
-                        </span>
-                      </li>
-                      <li class="menu-item" aria-haspopup="true">
-                        <a
-                          href="layout/themes/aside-light.html"
-                          class="menu-link"
-                        >
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Light Aside</span>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                 </li>
@@ -402,6 +323,48 @@ export default {
   },
   head() {
     return {
+      link:[
+              {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/plugins/global/plugins.bundle.css",
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/css/style.bundle.min.css",
+      },
+        {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/css/themes/layout/header/base/dark.css",
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/css/themes/layout/header/menu/dark.css",
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/css/themes/layout/brand/dark.css",
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/css/themes/layout/aside/dark.css",
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/css/custom/adminLayout.css",
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/plugins/global/toastr.min.css",
+      }
+      ],
       title: "layout headi",
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
