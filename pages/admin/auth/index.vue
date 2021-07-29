@@ -28,7 +28,6 @@
 <p class="soz-form__description password-reset" style="margin-top: 16px;">Forgot your password? <a href="https://vendors.paddle.com/password/reset">Reset it</a>.</p>
 </form>
 </section>
-
 </div>
   </div>
 </template>
